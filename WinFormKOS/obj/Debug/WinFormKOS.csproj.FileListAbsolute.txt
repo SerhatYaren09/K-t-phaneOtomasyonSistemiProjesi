@@ -1,0 +1,11 @@
+C:\Users\karde\Desktop\WinFormKOS\WinFormKOS\obj\Debug\WinFormKOS.csprojAssemblyReference.cache
+C:\Users\karde\Desktop\WinFormKOS\WinFormKOS\obj\Debug\WinFormKOS.FormLogin.resources
+C:\Users\karde\Desktop\WinFormKOS\WinFormKOS\obj\Debug\WinFormKOS.Properties.Resources.resources
+C:\Users\karde\Desktop\WinFormKOS\WinFormKOS\obj\Debug\WinFormKOS.csproj.GenerateResource.cache
+C:\Users\karde\Desktop\WinFormKOS\WinFormKOS\obj\Debug\WinFormKOS.csproj.CoreCompileInputs.cache
+C:\Users\karde\Desktop\WinFormKOS\WinFormKOS\bin\Debug\WinFormKOS.exe.config
+C:\Users\karde\Desktop\WinFormKOS\WinFormKOS\bin\Debug\WinFormKOS.exe
+C:\Users\karde\Desktop\WinFormKOS\WinFormKOS\bin\Debug\WinFormKOS.pdb
+C:\Users\karde\Desktop\WinFormKOS\WinFormKOS\obj\Debug\WinFormKOS.FormKurulum.resources
+C:\Users\karde\Desktop\WinFormKOS\WinFormKOS\obj\Debug\WinFormKOS.exe
+C:\Users\karde\Desktop\WinFormKOS\WinFormKOS\obj\Debug\WinFormKOS.pdb
