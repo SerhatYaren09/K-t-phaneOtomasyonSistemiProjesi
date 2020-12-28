@@ -90,6 +90,7 @@ namespace WinFormKOS
             this.btnGiris.TabIndex = 5;
             this.btnGiris.Text = "Giriş Yap";
             this.btnGiris.UseVisualStyleBackColor = true;
+            this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
             // 
             // FormLogin
             // 

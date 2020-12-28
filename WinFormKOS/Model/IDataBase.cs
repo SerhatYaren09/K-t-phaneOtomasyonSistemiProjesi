@@ -15,7 +15,7 @@ namespace WinFormKOS.Model
         {
             try
             {
-                SqlConnection con = new SqlConnection("connectionString");
+                SqlConnection con = new SqlConnection(connectionString);
                 SqlCommand cmd = new SqlCommand(query, con);
                 if (parameters != null)
                 {
@@ -53,6 +53,7 @@ namespace WinFormKOS.Model
                 {
                     cmd.Parameters.AddRange(parameters.ToArray());
                 }
+                cmd.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {

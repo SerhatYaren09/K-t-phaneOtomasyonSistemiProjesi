@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormKOS.Model;
 
 namespace WinFormKOS
 {
@@ -16,7 +17,16 @@ namespace WinFormKOS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormKurulum());
+           
+
+            if (IDataBase.DataToDataTable("Select * From kullanicilar Where aktif = 1").Rows.Count > 0)
+                {
+                Application.Run(new FormLogin());
+            }
+            else
+            {
+                Application.Run(new FormKurulum());
+            }
         }
     }
 }

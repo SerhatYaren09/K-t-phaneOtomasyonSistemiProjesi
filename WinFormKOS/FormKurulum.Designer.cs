@@ -186,6 +186,7 @@ namespace WinFormKOS
             this.btnKaydol.TabIndex = 2;
             this.btnKaydol.Text = "Kaydol";
             this.btnKaydol.UseVisualStyleBackColor = true;
+            this.btnKaydol.Click += new System.EventHandler(this.btnKaydol_Click);
             // 
             // FormKurulum
             // 
