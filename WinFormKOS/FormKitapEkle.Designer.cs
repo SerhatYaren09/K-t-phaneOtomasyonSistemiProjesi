@@ -350,17 +350,17 @@ namespace WinFormKOS
             // dg
             // 
             this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg.Location = new System.Drawing.Point(298, 37);
+            this.dg.Location = new System.Drawing.Point(298, 12);
             this.dg.Name = "dg";
             this.dg.RowHeadersWidth = 51;
             this.dg.RowTemplate.Height = 24;
-            this.dg.Size = new System.Drawing.Size(849, 414);
+            this.dg.Size = new System.Drawing.Size(849, 391);
             this.dg.TabIndex = 13;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(890, 14);
+            this.label12.Location = new System.Drawing.Point(861, 424);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(54, 17);
             this.label12.TabIndex = 14;
@@ -368,9 +368,9 @@ namespace WinFormKOS
             // 
             // txtFiltrele
             // 
-            this.txtFiltrele.Location = new System.Drawing.Point(950, 9);
+            this.txtFiltrele.Location = new System.Drawing.Point(912, 419);
             this.txtFiltrele.Name = "txtFiltrele";
-            this.txtFiltrele.Size = new System.Drawing.Size(197, 22);
+            this.txtFiltrele.Size = new System.Drawing.Size(235, 22);
             this.txtFiltrele.TabIndex = 15;
             // 
             // FormKitapEkle
@@ -386,6 +386,7 @@ namespace WinFormKOS
             this.Name = "FormKitapEkle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kitap Ekle";
+            this.Load += new System.EventHandler(this.FormKitapEkle_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);

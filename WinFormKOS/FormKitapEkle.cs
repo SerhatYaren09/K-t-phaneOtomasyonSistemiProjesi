@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormKOS.Model;
 
 namespace WinFormKOS
 {
@@ -15,6 +16,18 @@ namespace WinFormKOS
         public FormKitapEkle()
         {
             InitializeComponent();
+        }
+
+        private void FormKitapEkle_Load(object sender, EventArgs e)
+        {
+
+        }
+        void comboBoxFill()
+        {
+            foreach(DataRow row in IDataBase.DataToDataTable("Select * From dolaplar").Rows)
+            
+                cbbDolap.Items.Add(row["adi"].ToString());
+            
         }
     }
 }
