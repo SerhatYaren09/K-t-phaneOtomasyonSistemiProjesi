@@ -20,7 +20,7 @@ namespace WinFormKOS
 
         private void FormHome_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(UserInfo.userId.ToString());
+           // MessageBox.Show(UserInfo.userId.ToString());
         }
     }
 }
