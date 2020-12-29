@@ -52,6 +52,12 @@
     <Compile Include="FormHome.Designer.cs">
       <DependentUpon>FormHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormKitapEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKitapEkle.Designer.cs">
+      <DependentUpon>FormKitapEkle.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormKurulum.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKitapEkle.resx">
+      <DependentUpon>FormKitapEkle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormKurulum.resx">
       <DependentUpon>FormKurulum.cs</DependentUpon>

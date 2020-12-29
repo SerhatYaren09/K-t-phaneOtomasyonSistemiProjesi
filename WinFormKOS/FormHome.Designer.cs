@@ -38,18 +38,18 @@ namespace WinFormKOS
             this.btnCikis = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dgEmanet = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgMevcutKitaplar = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dgOkuyucular = new System.Windows.Forms.DataGridView();
-            this.dgMevcutKitaplar = new System.Windows.Forms.DataGridView();
-            this.dgEmanet = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgEmanet)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgMevcutKitaplar)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgOkuyucular)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgMevcutKitaplar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgEmanet)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEmanetIslem
@@ -73,6 +73,7 @@ namespace WinFormKOS
             this.btnKitapEkle.Text = "Kitap Ekle";
             this.btnKitapEkle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnKitapEkle.UseVisualStyleBackColor = true;
+            this.btnKitapEkle.Click += new System.EventHandler(this.btnKitapEkle_Click);
             // 
             // btnOkuyucuEkle
             // 
@@ -140,6 +141,17 @@ namespace WinFormKOS
             this.tabPage1.Text = "Emanet Kitaplar";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // dgEmanet
+            // 
+            this.dgEmanet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgEmanet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgEmanet.Location = new System.Drawing.Point(3, 3);
+            this.dgEmanet.Name = "dgEmanet";
+            this.dgEmanet.RowHeadersWidth = 51;
+            this.dgEmanet.RowTemplate.Height = 24;
+            this.dgEmanet.Size = new System.Drawing.Size(1113, 253);
+            this.dgEmanet.TabIndex = 0;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.dgMevcutKitaplar);
@@ -150,6 +162,17 @@ namespace WinFormKOS
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mevcut Kitaplar";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dgMevcutKitaplar
+            // 
+            this.dgMevcutKitaplar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgMevcutKitaplar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgMevcutKitaplar.Location = new System.Drawing.Point(3, 3);
+            this.dgMevcutKitaplar.Name = "dgMevcutKitaplar";
+            this.dgMevcutKitaplar.RowHeadersWidth = 51;
+            this.dgMevcutKitaplar.RowTemplate.Height = 24;
+            this.dgMevcutKitaplar.Size = new System.Drawing.Size(1113, 253);
+            this.dgMevcutKitaplar.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -173,28 +196,6 @@ namespace WinFormKOS
             this.dgOkuyucular.Size = new System.Drawing.Size(1113, 253);
             this.dgOkuyucular.TabIndex = 0;
             // 
-            // dgMevcutKitaplar
-            // 
-            this.dgMevcutKitaplar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgMevcutKitaplar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgMevcutKitaplar.Location = new System.Drawing.Point(3, 3);
-            this.dgMevcutKitaplar.Name = "dgMevcutKitaplar";
-            this.dgMevcutKitaplar.RowHeadersWidth = 51;
-            this.dgMevcutKitaplar.RowTemplate.Height = 24;
-            this.dgMevcutKitaplar.Size = new System.Drawing.Size(1113, 253);
-            this.dgMevcutKitaplar.TabIndex = 0;
-            // 
-            // dgEmanet
-            // 
-            this.dgEmanet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgEmanet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgEmanet.Location = new System.Drawing.Point(3, 3);
-            this.dgEmanet.Name = "dgEmanet";
-            this.dgEmanet.RowHeadersWidth = 51;
-            this.dgEmanet.RowTemplate.Height = 24;
-            this.dgEmanet.Size = new System.Drawing.Size(1113, 253);
-            this.dgEmanet.TabIndex = 0;
-            // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -213,11 +214,11 @@ namespace WinFormKOS
             this.Load += new System.EventHandler(this.FormHome_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgEmanet)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgMevcutKitaplar)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgOkuyucular)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgMevcutKitaplar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgEmanet)).EndInit();
             this.ResumeLayout(false);
 
         }

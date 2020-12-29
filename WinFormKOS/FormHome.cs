@@ -22,5 +22,11 @@ namespace WinFormKOS
         {
            // MessageBox.Show(UserInfo.userId.ToString());
         }
+
+        private void btnKitapEkle_Click(object sender, EventArgs e)
+        {
+            FormKitapEkle formKitapEkle = new FormKitapEkle();
+            formKitapEkle.Show();
+        }
     }
 }
