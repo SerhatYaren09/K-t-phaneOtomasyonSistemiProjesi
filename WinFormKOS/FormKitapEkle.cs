@@ -77,7 +77,7 @@ namespace WinFormKOS
 
         private void dg_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex > 1)
+            if(e.RowIndex > -1)
             {
                 kitapId = Convert.ToInt32(dg.Rows[e.RowIndex].Cells["id"].Value);
                 foreach (DataRow row in IDataBase.DataToDataTable("Select * From Kitaplar Where aktif = 1 and id = @id", new SqlParameter("@id", SqlDbType.Int) { Value = kitapId }).Rows)

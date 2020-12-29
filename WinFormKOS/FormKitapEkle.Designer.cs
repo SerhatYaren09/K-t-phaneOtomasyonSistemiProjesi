@@ -350,6 +350,7 @@ namespace WinFormKOS
             // 
             // dg
             // 
+            this.dg.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg.Location = new System.Drawing.Point(298, 12);
             this.dg.MultiSelect = false;
