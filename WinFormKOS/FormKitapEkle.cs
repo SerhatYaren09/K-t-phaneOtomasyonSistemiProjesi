@@ -86,6 +86,9 @@ namespace WinFormKOS
                     txtKitapAdi.Text = row["kitapAdi"].ToString();
                     cbbYazarAdi.Text = row["yazarAdi"].ToString();
                     cbbYayınevi.Text = row["yayinevi"].ToString();
+                    txtBasimYil.Text = row["basimYili"].ToString();
+                    txtSayfaSayisi.Text = row["basimYili"].ToString();
+                    cbbTur.Text = row["tur"].ToString();
                 }
             }
 
