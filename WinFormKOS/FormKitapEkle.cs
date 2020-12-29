@@ -69,6 +69,28 @@ namespace WinFormKOS
             kitaplarLoad();
             }
 
+        void kitapGuncelle()
+        {
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@kitapAdi", SqlDbType.VarChar) { Value = txtKitapAdi.Text });
+            parameters.Add(new SqlParameter("@yazarAdi", SqlDbType.VarChar) { Value = cbbYazarAdi.Text });
+            parameters.Add(new SqlParameter("@yayinevi", SqlDbType.VarChar) { Value = cbbYayınevi.Text });
+            parameters.Add(new SqlParameter("@basimyili", SqlDbType.VarChar) { Value = txtBasimYil.Text });
+            parameters.Add(new SqlParameter("@sayfaSayisi", SqlDbType.VarChar) { Value = txtSayfaSayisi.Text });
+            parameters.Add(new SqlParameter("@tur", SqlDbType.VarChar) { Value = cbbTur.Text });
+            parameters.Add(new SqlParameter("@aciklama", SqlDbType.VarChar) { Value = txtAciklama.Text });
+            parameters.Add(new SqlParameter("@dolap", SqlDbType.VarChar) { Value = cbbDolap.Text });
+            parameters.Add(new SqlParameter("@raf", SqlDbType.VarChar) { Value = txtRaf.Text });
+            parameters.Add(new SqlParameter("@sira", SqlDbType.VarChar) { Value = txtSira.Text });
+            parameters.Add(new SqlParameter("@id", SqlDbType.Int) { Value = kitapId});
+
+            IDataBase.executeNonQuery("Update kitaplar Set kitapAdi = @kitapAdi, yazarAdi = @yazarAdi, yayinevi = @yayinevi basimyili = @basimyili, sayfaSayisi = @sayfaSayisi, tur = @tur, aciklama = @aciklama, dolap = @dolap, raf = @raf, sira = @sira Where id = @id", parameters);
+            kitaplarLoad();
+        }
+
+
+
+
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             kitapEkle();
