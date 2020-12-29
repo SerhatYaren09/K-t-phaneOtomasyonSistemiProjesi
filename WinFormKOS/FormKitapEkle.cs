@@ -22,6 +22,7 @@ namespace WinFormKOS
         private void FormKitapEkle_Load(object sender, EventArgs e)
         {
             comboBoxFill();
+            kitaplarLoad();
         }
         void comboBoxFill()
         {
@@ -40,7 +41,15 @@ namespace WinFormKOS
             foreach (DataRow row in IDataBase.DataToDataTable("Select * From yazarlar").Rows)
 
                 cbbYazarAdi.Items.Add(row["adi"].ToString());
+               
         }
+
+        void kitaplarLoad()
+        {
+            dg.DataSource = IDataBase.DataToDataTable("Select * From kitaplar Where aktif = 1");
+        }
+
+
             void kitapEkle()
             {
                 List<SqlParameter> parameters = new List<SqlParameter>();
@@ -57,12 +66,13 @@ namespace WinFormKOS
                 parameters.Add(new SqlParameter("@sira", SqlDbType.VarChar) { Value = txtSira.Text });
 
             IDataBase.executeNonQuery("Insert Into kitaplar (kayitNo, kitapAdi, yazarAdi, yayinevi, basimyili, sayfaSayisi, tur, aciklama, dolap, raf, sira) Values(@kayitNo, @kitapAdi, @yazarAdi, @yayinevi, @basimyili, @sayfaSayisi, @tur, @aciklama, @dolap, @raf, @sira)", parameters);
-
+            kitaplarLoad();
             }
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             kitapEkle();
+            
         }
     }
     }

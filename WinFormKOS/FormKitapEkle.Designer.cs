@@ -352,9 +352,13 @@ namespace WinFormKOS
             // 
             this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg.Location = new System.Drawing.Point(298, 12);
+            this.dg.MultiSelect = false;
             this.dg.Name = "dg";
+            this.dg.ReadOnly = true;
+            this.dg.RowHeadersVisible = false;
             this.dg.RowHeadersWidth = 51;
             this.dg.RowTemplate.Height = 24;
+            this.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg.Size = new System.Drawing.Size(849, 391);
             this.dg.TabIndex = 13;
             // 
