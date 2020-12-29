@@ -91,6 +91,8 @@ namespace WinFormKOS
                     cbbTur.Text = row["tur"].ToString();
                     txtAciklama.Text = row["aciklama"].ToString();
                     cbbDolap.Text = row["dolap"].ToString();
+                    txtRaf.Text = row["raf"].ToString();
+                    txtSira.Text = row["sira"].ToString();
                 }
             }
 
