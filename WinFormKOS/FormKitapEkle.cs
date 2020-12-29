@@ -93,8 +93,16 @@ namespace WinFormKOS
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            kitapEkle();
             
+
+            if(kitapId > 0)
+            {
+                kitapGuncelle();
+            }
+            else
+            {
+                kitapEkle();
+            }
         }
 
         private void dg_CellClick(object sender, DataGridViewCellEventArgs e)
