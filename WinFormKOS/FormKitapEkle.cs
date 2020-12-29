@@ -18,7 +18,7 @@ namespace WinFormKOS
         {
             InitializeComponent();
         }
-
+       int kitapId = 0;
         private void FormKitapEkle_Load(object sender, EventArgs e)
         {
             comboBoxFill();
@@ -73,6 +73,19 @@ namespace WinFormKOS
         {
             kitapEkle();
             
+        }
+
+        private void dg_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex > 1)
+            {
+                kitapId = Convert.ToInt32(dg.Rows[e.RowIndex].Cells["id"].Value);
+                foreach (DataRow row in IDataBase.DataToDataTable("Select * From Kitaplar Where aktif = 1 and id = @id", new SqlParameter("@id", SqlDbType.Int) { Value = kitapId }).Rows)
+                {
+                    txtKayitNo.Text = row["kayitNo"].ToString();
+                }
+            }
+
         }
     }
     }
