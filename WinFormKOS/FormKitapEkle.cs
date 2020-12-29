@@ -56,7 +56,7 @@ namespace WinFormKOS
                 parameters.Add(new SqlParameter("@raf", SqlDbType.VarChar) { Value = txtRaf.Text });
                 parameters.Add(new SqlParameter("@sira", SqlDbType.VarChar) { Value = txtSira.Text });
 
-               
+            IDataBase.executeNonQuery("Insert Into kitaplar (kayitNo, kitapAdi, yazarAdi, yayinevi, basimyili, sayfaSayisi, tur, aciklama, dolap, raf, sira) Values(@kayitNo, @kitapAdi, @yazarAdi, @yayinevi, @basimyili, @sayfaSayisi, @tur, @aciklama, @dolap, @raf, @sira)", parameters);
 
             }
         }
