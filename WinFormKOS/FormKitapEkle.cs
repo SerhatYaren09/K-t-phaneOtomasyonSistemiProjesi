@@ -20,7 +20,7 @@ namespace WinFormKOS
 
         private void FormKitapEkle_Load(object sender, EventArgs e)
         {
-
+            comboBoxFill();
         }
         void comboBoxFill()
         {
