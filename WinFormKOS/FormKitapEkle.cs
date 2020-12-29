@@ -27,7 +27,11 @@ namespace WinFormKOS
             foreach(DataRow row in IDataBase.DataToDataTable("Select * From dolaplar").Rows)
             
                 cbbDolap.Items.Add(row["adi"].ToString());
-            
+
+            foreach (DataRow row in IDataBase.DataToDataTable("Select * From turler").Rows)
+
+                cbbTur.Items.Add(row["adi"].ToString());
+
         }
     }
 }
