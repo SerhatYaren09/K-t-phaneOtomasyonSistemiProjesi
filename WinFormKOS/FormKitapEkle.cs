@@ -36,6 +36,10 @@ namespace WinFormKOS
 
                 cbbYayınevi.Items.Add(row["adi"].ToString());
 
+            foreach (DataRow row in IDataBase.DataToDataTable("Select * From yazarlar").Rows)
+
+                cbbYazarAdi.Items.Add(row["adi"].ToString());
+
         }
     }
 }
