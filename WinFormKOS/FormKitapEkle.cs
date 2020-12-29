@@ -59,6 +59,11 @@ namespace WinFormKOS
             IDataBase.executeNonQuery("Insert Into kitaplar (kayitNo, kitapAdi, yazarAdi, yayinevi, basimyili, sayfaSayisi, tur, aciklama, dolap, raf, sira) Values(@kayitNo, @kitapAdi, @yazarAdi, @yayinevi, @basimyili, @sayfaSayisi, @tur, @aciklama, @dolap, @raf, @sira)", parameters);
 
             }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            kitapEkle();
         }
+    }
     }
 
