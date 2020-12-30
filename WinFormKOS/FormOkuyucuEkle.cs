@@ -27,7 +27,7 @@ namespace WinFormKOS
         void okuyucuEkle()
         {
             List<SqlParameter> parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@adi", SqlDbType.Int) { Value = txtAd.Text });
+            parameters.Add(new SqlParameter("@adi", SqlDbType.VarChar) { Value = txtAd.Text });
             parameters.Add(new SqlParameter("@soyadi", SqlDbType.VarChar) { Value = txtSoyad.Text });
             string cinsiyet = "";
             if(radiobtnErkek.Checked)
@@ -45,15 +45,16 @@ namespace WinFormKOS
             parameters.Add(new SqlParameter("@cepTel", SqlDbType.VarChar) { Value = maskedCepTel.Text });
             parameters.Add(new SqlParameter("@adres", SqlDbType.VarChar) { Value = txtAdres.Text });
 
-          object value = IDataBase.executeScaler("Inser Into okuyucular (adi, soyadi ,cinsiyeti, sinifi, okulNo, cepTel, adres) Values (@adi, @soyadi , @cinsiyeti, @sinifi, @okulNo, @cepTel, @adres)", parameters);
+          object value = IDataBase.executeScaler("Insert Into okuyucular(adi, soyadi ,cinsiyeti, sinifi, okulNo, cepTel, adres) Values(@adi, @soyadi , @cinsiyeti, @sinifi, @okulNo, @cepTel, @adres) Select @@IDENTITY", parameters);
             okuyucuId = Convert.ToInt32(value);
 
             okuyucularLoad();
+            
         }
 
         void okuyucularLoad()
         {
-            dg.DataSource = IDataBase.DataToDataTable("Select * From okuyucular Where aktif= 1");
+            dg.DataSource = IDataBase.DataToDataTable("Select * From okuyucular");
         }
         private void btnKaydet_Click(object sender, EventArgs e)
         {
