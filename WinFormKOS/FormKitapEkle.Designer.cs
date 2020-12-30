@@ -337,6 +337,7 @@ namespace WinFormKOS
             this.btnSil.TabIndex = 1;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnTemizle
             // 

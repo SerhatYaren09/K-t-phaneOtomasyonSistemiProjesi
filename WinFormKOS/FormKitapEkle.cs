@@ -84,10 +84,17 @@ namespace WinFormKOS
             parameters.Add(new SqlParameter("@sira", SqlDbType.VarChar) { Value = txtSira.Text });
             parameters.Add(new SqlParameter("@id", SqlDbType.Int) { Value = kitapId});
 
-            IDataBase.executeNonQuery("Update kitaplar Set kitapAdi = @kitapAdi, yazarAdi = @yazarAdi, yayinevi = @yayinevi basimyili = @basimyili, sayfaSayisi = @sayfaSayisi, tur = @tur, aciklama = @aciklama, dolap = @dolap, raf = @raf, sira = @sira Where id = @id", parameters);
+            IDataBase.executeNonQuery("Update kitaplar Set kitapAdi = @kitapAdi, yazarAdi = @yazarAdi, yayinevi = @yayinevi, basimyili = @basimyili, sayfaSayisi = @sayfaSayisi, tur = @tur, aciklama = @aciklama, dolap = @dolap, raf = @raf, sira = @sira Where id = @id", parameters);
             kitaplarLoad();
         }
 
+        void kitapSil()
+        {
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@id", SqlDbType.Int) { Value = kitapId });
+            IDataBase.executeNonQuery("Delete From kitaplar Where id = @id", parameters);
+            kitaplarLoad();
+        }
 
 
 
@@ -126,6 +133,26 @@ namespace WinFormKOS
                 }
             }
 
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if(kitapId > 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("Seçili kitabı silmek istediğinize emin misiniz?", "Kitap Sil", MessageBoxButtons.YesNo);
+                if(dialogResult == DialogResult.Yes)
+                {
+                    kitapSil();
+                }
+                else
+                {
+                    MessageBox.Show("İşlem iptal Edildi");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Kitap Seçiniz");
+            }
         }
     }
     }
