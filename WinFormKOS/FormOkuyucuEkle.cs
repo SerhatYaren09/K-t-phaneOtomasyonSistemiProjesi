@@ -20,6 +20,7 @@ namespace WinFormKOS
         }
 
         int okuyucuId = 0;
+        string okuyucuFoto = "";
         private void FormOkuyucuEkle_Load(object sender, EventArgs e)
         {
             okuyucularLoad();
@@ -59,6 +60,16 @@ namespace WinFormKOS
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             okuyucuEkle();
+        }
+
+        private void btnFotoSec_Click(object sender, EventArgs e)
+        {
+            openFileDialog.Filter = "(*jpg)|*.jpg";
+            if(openFileDialog.ShowDialog() ==DialogResult.OK)
+            {
+                okuyucuFoto = openFileDialog.FileName;
+                pictureProfil.ImageLocation = okuyucuFoto;
+            }
         }
     }
 }

@@ -220,6 +220,7 @@ namespace WinFormKOS
             this.btnFotoSec.TabIndex = 1;
             this.btnFotoSec.Text = "Fotoğraf";
             this.btnFotoSec.UseVisualStyleBackColor = true;
+            this.btnFotoSec.Click += new System.EventHandler(this.btnFotoSec_Click);
             // 
             // txtAd
             // 
