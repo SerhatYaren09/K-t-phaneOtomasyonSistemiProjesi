@@ -113,6 +113,7 @@ namespace WinFormKOS
             parameters.Add(new SqlParameter("@id", SqlDbType.Int) { Value = kitapId });
             IDataBase.executeNonQuery("Delete From kitaplar Where id = @id", parameters);
             kitaplarLoad();
+            temizle();
             MessageBox.Show("Kitap silme işlemi başarılı");
         }
 
@@ -178,7 +179,7 @@ namespace WinFormKOS
                 if(dialogResult == DialogResult.Yes)
                 {
                     kitapSil();
-                    temizle();
+                    
                 }
                 else
                 {

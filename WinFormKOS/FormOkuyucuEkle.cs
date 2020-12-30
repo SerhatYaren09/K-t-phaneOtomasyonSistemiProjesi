@@ -93,6 +93,7 @@ namespace WinFormKOS
             parameters.Add(new SqlParameter("@id", SqlDbType.Int) { Value = okuyucuId });
             IDataBase.executeNonQuery("Delete From okuyucular Where id = @id", parameters);
             okuyucularLoad();
+            temizle();
             MessageBox.Show("Okuyucu silme işlemi başarılı");
         }
 
@@ -199,7 +200,7 @@ namespace WinFormKOS
                 if (dialogResult == DialogResult.Yes)
                 {
                     okuyucuSil();
-                    
+                 
                 }
                 else
                 {
