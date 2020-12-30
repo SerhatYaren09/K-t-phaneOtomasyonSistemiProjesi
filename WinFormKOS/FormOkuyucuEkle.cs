@@ -59,6 +59,7 @@ namespace WinFormKOS
         void okuyucularLoad()
         {
             dg.DataSource = IDataBase.DataToDataTable("Select * From okuyucular");
+            dg.Columns["id"].Visible = false;
         }
 
         void fotoSave()
