@@ -216,7 +216,7 @@ namespace WinFormKOS
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(280, 391);
-            this.tableLayoutPanel1.TabIndex = 11;
+            this.tableLayoutPanel1.TabIndex = 1;
             // 
             // txtKayitNo
             // 
@@ -224,7 +224,7 @@ namespace WinFormKOS
             this.txtKayitNo.Name = "txtKayitNo";
             this.txtKayitNo.ReadOnly = true;
             this.txtKayitNo.Size = new System.Drawing.Size(176, 22);
-            this.txtKayitNo.TabIndex = 11;
+            this.txtKayitNo.TabIndex = 2;
             // 
             // txtKitapAdi
             // 

@@ -83,6 +83,7 @@ namespace WinFormKOS
             txtKayitNo.Text = kayitNo.ToString();
             
             kitaplarLoad();
+            MessageBox.Show("Kitap ekleme işlemi başarılı");
             }
 
         void kitapGuncelle()
@@ -102,6 +103,7 @@ namespace WinFormKOS
 
             IDataBase.executeNonQuery("Update kitaplar Set kitapAdi = @kitapAdi, yazarAdi = @yazarAdi, yayinevi = @yayinevi, basimyili = @basimyili, sayfaSayisi = @sayfaSayisi, tur = @tur, aciklama = @aciklama, dolap = @dolap, raf = @raf, sira = @sira Where id = @id", parameters);
             kitaplarLoad();
+            MessageBox.Show("Kitap Güncelleme işlemi başarılı");
         }
 
         void kitapSil()
@@ -110,6 +112,7 @@ namespace WinFormKOS
             parameters.Add(new SqlParameter("@id", SqlDbType.Int) { Value = kitapId });
             IDataBase.executeNonQuery("Delete From kitaplar Where id = @id", parameters);
             kitaplarLoad();
+            MessageBox.Show("Kitap silme işlemi başarılı");
         }
 
         void temizle()
@@ -174,6 +177,7 @@ namespace WinFormKOS
                 if(dialogResult == DialogResult.Yes)
                 {
                     kitapSil();
+                    temizle();
                 }
                 else
                 {
