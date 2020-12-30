@@ -50,5 +50,10 @@ namespace WinFormKOS
 
             MessageBox.Show(okuyucuId.ToString());
         }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            okuyucuEkle();
+        }
     }
 }
