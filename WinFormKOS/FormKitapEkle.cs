@@ -47,6 +47,7 @@ namespace WinFormKOS
         void kitaplarLoad()
         {
             dg.DataSource = IDataBase.DataToDataTable("Select * From kitaplar Where aktif = 1");
+            dg.Columns["id"].Visible = false;
         }
 
         int getKayitNo()
