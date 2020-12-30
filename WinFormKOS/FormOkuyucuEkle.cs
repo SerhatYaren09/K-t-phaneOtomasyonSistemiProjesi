@@ -52,7 +52,8 @@ namespace WinFormKOS
          
             fotoSave();
             okuyucularLoad();
-            
+            MessageBox.Show("Okuyucu güncelleme işlemi başarılı");
+
         }
 
         void okuyucuEkle()
@@ -82,6 +83,8 @@ namespace WinFormKOS
             fotoSave();
 
             okuyucularLoad();
+
+            MessageBox.Show("Okuyucu ekleme işlemi başarılı");
 
         }
 
