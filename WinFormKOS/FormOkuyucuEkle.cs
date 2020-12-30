@@ -109,10 +109,9 @@ namespace WinFormKOS
                     }
                     txtSinif.Text = row["sinifi"].ToString();
                     txtOkulNo.Text = row["okulNo"].ToString();
+                    maskedCepTel.Text = row["cepTel"].ToString();
+                    txtAdres.Text = row["adres"].ToString();
                     
-
-
-
                 }
                         
              }
