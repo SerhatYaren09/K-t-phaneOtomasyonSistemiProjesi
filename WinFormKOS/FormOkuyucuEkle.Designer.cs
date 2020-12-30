@@ -59,6 +59,7 @@ namespace WinFormKOS
             this.label8 = new System.Windows.Forms.Label();
             this.txtFiltrele = new System.Windows.Forms.TextBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.label9 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -176,6 +177,7 @@ namespace WinFormKOS
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label9, 0, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
@@ -388,6 +390,16 @@ namespace WinFormKOS
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 41);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(61, 17);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Fotoğraf";
+            // 
             // FormOkuyucuEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -402,9 +414,11 @@ namespace WinFormKOS
             this.Name = "FormOkuyucuEkle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Okuyucu Ekle";
+            this.Load += new System.EventHandler(this.FormOkuyucuEkle_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureProfil)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -447,5 +461,6 @@ namespace WinFormKOS
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtFiltrele;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Label label9;
     }
 }
