@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,6 +50,8 @@ namespace WinFormKOS
           object value = IDataBase.executeScaler("Insert Into okuyucular(adi, soyadi ,cinsiyeti, sinifi, okulNo, cepTel, adres) Values(@adi, @soyadi , @cinsiyeti, @sinifi, @okulNo, @cepTel, @adres) Select @@IDENTITY", parameters);
             okuyucuId = Convert.ToInt32(value);
 
+            fotoSave();
+
             okuyucularLoad();
             
         }
@@ -56,6 +59,14 @@ namespace WinFormKOS
         void okuyucularLoad()
         {
             dg.DataSource = IDataBase.DataToDataTable("Select * From okuyucular");
+        }
+
+        void fotoSave()
+        {
+            if(!string.IsNullOrEmpty(okuyucuFoto))
+            {
+                File.Copy(okuyucuFoto, Application.StartupPath + "/profil/" + okuyucuId + ".jpg", true);
+            }
         }
         private void btnKaydet_Click(object sender, EventArgs e)
         {
