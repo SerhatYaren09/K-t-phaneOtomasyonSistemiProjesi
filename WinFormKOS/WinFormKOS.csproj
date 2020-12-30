@@ -76,6 +76,7 @@
     <Compile Include="FormOkuyucuEkle.Designer.cs">
       <DependentUpon>FormOkuyucuEkle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Helper.cs" />
     <Compile Include="Model\IDataBase.cs" />
     <Compile Include="Model\UserInfo.cs" />
     <Compile Include="Program.cs" />

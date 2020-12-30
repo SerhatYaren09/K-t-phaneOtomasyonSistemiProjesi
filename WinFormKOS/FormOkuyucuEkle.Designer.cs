@@ -377,6 +377,7 @@ namespace WinFormKOS
             this.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg.Size = new System.Drawing.Size(899, 465);
             this.dg.TabIndex = 10;
+            this.dg.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_CellContentClick);
             // 
             // label8
             // 

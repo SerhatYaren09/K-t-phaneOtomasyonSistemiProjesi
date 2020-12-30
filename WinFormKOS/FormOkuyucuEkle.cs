@@ -82,5 +82,14 @@ namespace WinFormKOS
                 pictureProfil.ImageLocation = okuyucuFoto;
             }
         }
+
+        private void dg_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex > -1)
+            {
+                okuyucuId = Convert.ToInt32(dg.Rows[e.RowIndex].Cells["id"].Value);
+                pictureProfil.ImageLocation = Helper.profilPath(okuyucuId);
+            }
+        }
     }
 }
