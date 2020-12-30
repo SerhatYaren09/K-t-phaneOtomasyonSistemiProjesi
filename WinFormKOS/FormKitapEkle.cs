@@ -152,7 +152,7 @@ namespace WinFormKOS
             if(e.RowIndex > -1)
             {
                 kitapId = Convert.ToInt32(dg.Rows[e.RowIndex].Cells["id"].Value);
-                foreach (DataRow row in IDataBase.DataToDataTable("Select * From Kitaplar Where aktif = 1 and id = @id", new SqlParameter("@id", SqlDbType.Int) { Value = kitapId }).Rows)
+                foreach (DataRow row in IDataBase.DataToDataTable("Select * From kitaplar Where aktif = 1 and id = @id", new SqlParameter("@id", SqlDbType.Int) { Value = kitapId }).Rows)
                 {
                     txtKayitNo.Text = row["kayitNo"].ToString();
                     txtKitapAdi.Text = row["kitapAdi"].ToString();

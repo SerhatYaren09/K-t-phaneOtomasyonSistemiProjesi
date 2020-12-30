@@ -89,7 +89,14 @@ namespace WinFormKOS
             {
                 okuyucuId = Convert.ToInt32(dg.Rows[e.RowIndex].Cells["id"].Value);
                 pictureProfil.ImageLocation = Helper.profilPath(okuyucuId);
-            }
+
+                foreach (DataRow row in IDataBase.DataToDataTable("Select * From okuyucular Where id = @id", new SqlParameter("@id", SqlDbType.Int) { Value = okuyucuId }).Rows)
+                {
+                    txtAd.Text = row["adi"].ToString();
+                    txtSoyad.Text = row["soyadi"].ToString();
+                }
+                        
+             }
         }
     }
 }
