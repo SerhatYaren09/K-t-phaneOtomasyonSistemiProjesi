@@ -28,5 +28,11 @@ namespace WinFormKOS
             FormKitapEkle formKitapEkle = new FormKitapEkle();
             formKitapEkle.Show();
         }
+
+        private void btnOkuyucuEkle_Click(object sender, EventArgs e)
+        {
+            FormOkuyucuEkle formOkuyucuEkle = new FormOkuyucuEkle();
+            formOkuyucuEkle.Show();
+        }
     }
 }

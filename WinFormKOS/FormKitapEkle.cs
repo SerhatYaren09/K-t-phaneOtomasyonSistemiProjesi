@@ -46,6 +46,7 @@ namespace WinFormKOS
 
         void kitaplarLoad()
         {
+            //Filtreleme
             dg.DataSource = IDataBase.DataToDataTable("Select * From kitaplar Where yazarAdi+' '+kitapAdi Like @search", new SqlParameter("@search", SqlDbType.VarChar) { Value = string.Format("%{0}%", txtFiltrele.Text) });
             dg.Columns["id"].Visible = false;
         }

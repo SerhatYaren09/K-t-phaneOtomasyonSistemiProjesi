@@ -85,6 +85,7 @@ namespace WinFormKOS
             this.btnOkuyucuEkle.Text = "Okuyucu Ekle";
             this.btnOkuyucuEkle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnOkuyucuEkle.UseVisualStyleBackColor = true;
+            this.btnOkuyucuEkle.Click += new System.EventHandler(this.btnOkuyucuEkle_Click);
             // 
             // btnIstatistik
             // 
