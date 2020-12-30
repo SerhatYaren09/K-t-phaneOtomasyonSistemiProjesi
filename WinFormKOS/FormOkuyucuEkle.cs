@@ -91,9 +91,9 @@ namespace WinFormKOS
         {
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@id", SqlDbType.Int) { Value = okuyucuId });
-            IDataBase.executeNonQuery("Delete From kitaplar Where id = @id", parameters);
+            IDataBase.executeNonQuery("Delete From okuyucular Where id = @id", parameters);
             okuyucularLoad();
-            MessageBox.Show("Kitap silme işlemi başarılı");
+            MessageBox.Show("Okuyucu silme işlemi başarılı");
         }
 
 
