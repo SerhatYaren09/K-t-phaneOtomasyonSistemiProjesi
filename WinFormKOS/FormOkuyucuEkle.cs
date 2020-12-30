@@ -87,7 +87,14 @@ namespace WinFormKOS
             MessageBox.Show("Okuyucu ekleme işlemi başarılı");
 
         }
-
+        void okuyucuSil()
+        {
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@id", SqlDbType.Int) { Value = okuyucuId });
+            IDataBase.executeNonQuery("Delete From kitaplar Where id = @id", parameters);
+            okuyucularLoad();
+            MessageBox.Show("Kitap silme işlemi başarılı");
+        }
 
 
 
@@ -158,6 +165,28 @@ namespace WinFormKOS
                 }
                         
              }
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (okuyucuId > 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("Seçili okuyucu silmek istediğinize emin misiniz?", "Okuyucu Sil", MessageBoxButtons.YesNo);
+                
+                if (dialogResult == DialogResult.Yes)
+                {
+                    okuyucuSil();
+                    
+                }
+                else
+                {
+                    MessageBox.Show("İşlem iptal Edildi");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Okuyucu Seçiniz");
+            }
         }
     }
 }
