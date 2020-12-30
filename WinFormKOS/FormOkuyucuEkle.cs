@@ -88,12 +88,28 @@ namespace WinFormKOS
             if(e.RowIndex > -1)
             {
                 okuyucuId = Convert.ToInt32(dg.Rows[e.RowIndex].Cells["id"].Value);
+
                 pictureProfil.ImageLocation = Helper.profilPath(okuyucuId);
+
+                radiobtnErkek.Checked = false;
+                radiobtnKadin.Checked = false;
 
                 foreach (DataRow row in IDataBase.DataToDataTable("Select * From okuyucular Where id = @id", new SqlParameter("@id", SqlDbType.Int) { Value = okuyucuId }).Rows)
                 {
                     txtAd.Text = row["adi"].ToString();
                     txtSoyad.Text = row["soyadi"].ToString();
+                    string cinsiyet = row["cinsiyeti"].ToString();
+                    if(cinsiyet ==radiobtnErkek.Text)
+                    {
+                        radiobtnErkek.Checked = true;
+                    }
+                    else if (cinsiyet == radiobtnKadin.Text)
+                    {
+                        radiobtnKadin.Checked = true;
+                    }
+
+
+
                 }
                         
              }
