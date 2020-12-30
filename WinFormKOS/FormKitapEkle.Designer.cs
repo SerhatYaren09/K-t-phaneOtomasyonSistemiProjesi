@@ -41,21 +41,21 @@ namespace WinFormKOS
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtKayitNo = new System.Windows.Forms.TextBox();
-            this.txtKitapAdi = new System.Windows.Forms.TextBox();
-            this.cbbYazarAdi = new System.Windows.Forms.ComboBox();
-            this.cbbYayınevi = new System.Windows.Forms.ComboBox();
-            this.txtBasimYil = new System.Windows.Forms.TextBox();
-            this.txtSayfaSayisi = new System.Windows.Forms.TextBox();
-            this.cbbTur = new System.Windows.Forms.ComboBox();
-            this.txtAciklama = new System.Windows.Forms.TextBox();
-            this.cbbDolap = new System.Windows.Forms.ComboBox();
-            this.txtRaf = new System.Windows.Forms.TextBox();
             this.txtSira = new System.Windows.Forms.TextBox();
+            this.txtRaf = new System.Windows.Forms.TextBox();
+            this.cbbDolap = new System.Windows.Forms.ComboBox();
+            this.txtAciklama = new System.Windows.Forms.TextBox();
+            this.cbbTur = new System.Windows.Forms.ComboBox();
+            this.txtSayfaSayisi = new System.Windows.Forms.TextBox();
+            this.txtBasimYil = new System.Windows.Forms.TextBox();
+            this.cbbYayınevi = new System.Windows.Forms.ComboBox();
+            this.txtKitapAdi = new System.Windows.Forms.TextBox();
+            this.txtKayitNo = new System.Windows.Forms.TextBox();
+            this.cbbYazarAdi = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnKaydet = new System.Windows.Forms.Button();
-            this.btnSil = new System.Windows.Forms.Button();
             this.btnTemizle = new System.Windows.Forms.Button();
+            this.btnSil = new System.Windows.Forms.Button();
+            this.btnKaydet = new System.Windows.Forms.Button();
             this.dg = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
             this.txtFiltrele = new System.Windows.Forms.TextBox();
@@ -218,66 +218,19 @@ namespace WinFormKOS
             this.tableLayoutPanel1.Size = new System.Drawing.Size(280, 391);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // txtKayitNo
+            // txtSira
             // 
-            this.txtKayitNo.Location = new System.Drawing.Point(101, 3);
-            this.txtKayitNo.Name = "txtKayitNo";
-            this.txtKayitNo.ReadOnly = true;
-            this.txtKayitNo.Size = new System.Drawing.Size(176, 22);
-            this.txtKayitNo.TabIndex = 2;
+            this.txtSira.Location = new System.Drawing.Point(101, 360);
+            this.txtSira.Name = "txtSira";
+            this.txtSira.Size = new System.Drawing.Size(176, 22);
+            this.txtSira.TabIndex = 9;
             // 
-            // txtKitapAdi
+            // txtRaf
             // 
-            this.txtKitapAdi.Location = new System.Drawing.Point(101, 36);
-            this.txtKitapAdi.Name = "txtKitapAdi";
-            this.txtKitapAdi.Size = new System.Drawing.Size(176, 22);
-            this.txtKitapAdi.TabIndex = 0;
-            // 
-            // cbbYazarAdi
-            // 
-            this.cbbYazarAdi.FormattingEnabled = true;
-            this.cbbYazarAdi.Location = new System.Drawing.Point(101, 69);
-            this.cbbYazarAdi.Name = "cbbYazarAdi";
-            this.cbbYazarAdi.Size = new System.Drawing.Size(176, 24);
-            this.cbbYazarAdi.TabIndex = 1;
-            // 
-            // cbbYayınevi
-            // 
-            this.cbbYayınevi.FormattingEnabled = true;
-            this.cbbYayınevi.Location = new System.Drawing.Point(101, 102);
-            this.cbbYayınevi.Name = "cbbYayınevi";
-            this.cbbYayınevi.Size = new System.Drawing.Size(176, 24);
-            this.cbbYayınevi.TabIndex = 2;
-            // 
-            // txtBasimYil
-            // 
-            this.txtBasimYil.Location = new System.Drawing.Point(101, 135);
-            this.txtBasimYil.Name = "txtBasimYil";
-            this.txtBasimYil.Size = new System.Drawing.Size(176, 22);
-            this.txtBasimYil.TabIndex = 3;
-            // 
-            // txtSayfaSayisi
-            // 
-            this.txtSayfaSayisi.Location = new System.Drawing.Point(101, 168);
-            this.txtSayfaSayisi.Name = "txtSayfaSayisi";
-            this.txtSayfaSayisi.Size = new System.Drawing.Size(176, 22);
-            this.txtSayfaSayisi.TabIndex = 4;
-            // 
-            // cbbTur
-            // 
-            this.cbbTur.FormattingEnabled = true;
-            this.cbbTur.Location = new System.Drawing.Point(101, 201);
-            this.cbbTur.Name = "cbbTur";
-            this.cbbTur.Size = new System.Drawing.Size(176, 24);
-            this.cbbTur.TabIndex = 5;
-            // 
-            // txtAciklama
-            // 
-            this.txtAciklama.Location = new System.Drawing.Point(101, 234);
-            this.txtAciklama.Multiline = true;
-            this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(176, 54);
-            this.txtAciklama.TabIndex = 6;
+            this.txtRaf.Location = new System.Drawing.Point(101, 327);
+            this.txtRaf.Name = "txtRaf";
+            this.txtRaf.Size = new System.Drawing.Size(176, 22);
+            this.txtRaf.TabIndex = 8;
             // 
             // cbbDolap
             // 
@@ -287,19 +240,66 @@ namespace WinFormKOS
             this.cbbDolap.Size = new System.Drawing.Size(176, 24);
             this.cbbDolap.TabIndex = 7;
             // 
-            // txtRaf
+            // txtAciklama
             // 
-            this.txtRaf.Location = new System.Drawing.Point(101, 327);
-            this.txtRaf.Name = "txtRaf";
-            this.txtRaf.Size = new System.Drawing.Size(176, 22);
-            this.txtRaf.TabIndex = 8;
+            this.txtAciklama.Location = new System.Drawing.Point(101, 234);
+            this.txtAciklama.Multiline = true;
+            this.txtAciklama.Name = "txtAciklama";
+            this.txtAciklama.Size = new System.Drawing.Size(176, 54);
+            this.txtAciklama.TabIndex = 6;
             // 
-            // txtSira
+            // cbbTur
             // 
-            this.txtSira.Location = new System.Drawing.Point(101, 360);
-            this.txtSira.Name = "txtSira";
-            this.txtSira.Size = new System.Drawing.Size(176, 22);
-            this.txtSira.TabIndex = 9;
+            this.cbbTur.FormattingEnabled = true;
+            this.cbbTur.Location = new System.Drawing.Point(101, 201);
+            this.cbbTur.Name = "cbbTur";
+            this.cbbTur.Size = new System.Drawing.Size(176, 24);
+            this.cbbTur.TabIndex = 5;
+            // 
+            // txtSayfaSayisi
+            // 
+            this.txtSayfaSayisi.Location = new System.Drawing.Point(101, 168);
+            this.txtSayfaSayisi.Name = "txtSayfaSayisi";
+            this.txtSayfaSayisi.Size = new System.Drawing.Size(176, 22);
+            this.txtSayfaSayisi.TabIndex = 4;
+            // 
+            // txtBasimYil
+            // 
+            this.txtBasimYil.Location = new System.Drawing.Point(101, 135);
+            this.txtBasimYil.Name = "txtBasimYil";
+            this.txtBasimYil.Size = new System.Drawing.Size(176, 22);
+            this.txtBasimYil.TabIndex = 3;
+            // 
+            // cbbYayınevi
+            // 
+            this.cbbYayınevi.FormattingEnabled = true;
+            this.cbbYayınevi.Location = new System.Drawing.Point(101, 102);
+            this.cbbYayınevi.Name = "cbbYayınevi";
+            this.cbbYayınevi.Size = new System.Drawing.Size(176, 24);
+            this.cbbYayınevi.TabIndex = 2;
+            // 
+            // txtKitapAdi
+            // 
+            this.txtKitapAdi.Location = new System.Drawing.Point(101, 36);
+            this.txtKitapAdi.Name = "txtKitapAdi";
+            this.txtKitapAdi.Size = new System.Drawing.Size(176, 22);
+            this.txtKitapAdi.TabIndex = 0;
+            // 
+            // txtKayitNo
+            // 
+            this.txtKayitNo.Location = new System.Drawing.Point(101, 3);
+            this.txtKayitNo.Name = "txtKayitNo";
+            this.txtKayitNo.ReadOnly = true;
+            this.txtKayitNo.Size = new System.Drawing.Size(176, 22);
+            this.txtKayitNo.TabIndex = 2;
+            // 
+            // cbbYazarAdi
+            // 
+            this.cbbYazarAdi.FormattingEnabled = true;
+            this.cbbYazarAdi.Location = new System.Drawing.Point(101, 69);
+            this.cbbYazarAdi.Name = "cbbYazarAdi";
+            this.cbbYazarAdi.Size = new System.Drawing.Size(176, 24);
+            this.cbbYazarAdi.TabIndex = 1;
             // 
             // tableLayoutPanel2
             // 
@@ -314,20 +314,20 @@ namespace WinFormKOS
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(280, 42);
             this.tableLayoutPanel2.TabIndex = 12;
             // 
-            // btnKaydet
+            // btnTemizle
             // 
-            this.btnKaydet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnKaydet.Location = new System.Drawing.Point(3, 3);
-            this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(87, 36);
-            this.btnKaydet.TabIndex = 0;
-            this.btnKaydet.Text = "Kaydet";
-            this.btnKaydet.UseVisualStyleBackColor = true;
-            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
+            this.btnTemizle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTemizle.Location = new System.Drawing.Point(189, 3);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(88, 36);
+            this.btnTemizle.TabIndex = 2;
+            this.btnTemizle.Text = "Temizle";
+            this.btnTemizle.UseVisualStyleBackColor = true;
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // btnSil
             // 
@@ -340,16 +340,16 @@ namespace WinFormKOS
             this.btnSil.UseVisualStyleBackColor = true;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
-            // btnTemizle
+            // btnKaydet
             // 
-            this.btnTemizle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTemizle.Location = new System.Drawing.Point(189, 3);
-            this.btnTemizle.Name = "btnTemizle";
-            this.btnTemizle.Size = new System.Drawing.Size(88, 36);
-            this.btnTemizle.TabIndex = 2;
-            this.btnTemizle.Text = "Temizle";
-            this.btnTemizle.UseVisualStyleBackColor = true;
-            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
+            this.btnKaydet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnKaydet.Location = new System.Drawing.Point(3, 3);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(87, 36);
+            this.btnKaydet.TabIndex = 0;
+            this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // dg
             // 
@@ -382,6 +382,7 @@ namespace WinFormKOS
             this.txtFiltrele.Name = "txtFiltrele";
             this.txtFiltrele.Size = new System.Drawing.Size(235, 22);
             this.txtFiltrele.TabIndex = 15;
+            this.txtFiltrele.TextChanged += new System.EventHandler(this.txtFiltrele_TextChanged);
             // 
             // FormKitapEkle
             // 

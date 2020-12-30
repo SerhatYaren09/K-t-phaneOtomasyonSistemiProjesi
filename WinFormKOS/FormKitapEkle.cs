@@ -46,7 +46,7 @@ namespace WinFormKOS
 
         void kitaplarLoad()
         {
-            dg.DataSource = IDataBase.DataToDataTable("Select * From kitaplar Where aktif = 1");
+            dg.DataSource = IDataBase.DataToDataTable("Select * From kitaplar Where yazarAdi+' '+kitapAdi Like @search", new SqlParameter("@search", SqlDbType.VarChar) { Value = string.Format("%{0}%", txtFiltrele.Text) });
             dg.Columns["id"].Visible = false;
         }
 
@@ -193,6 +193,11 @@ namespace WinFormKOS
         private void btnTemizle_Click(object sender, EventArgs e)
         {
             temizle();
+        }
+
+        private void txtFiltrele_TextChanged(object sender, EventArgs e)
+        {
+            kitaplarLoad();
         }
     }
     }
