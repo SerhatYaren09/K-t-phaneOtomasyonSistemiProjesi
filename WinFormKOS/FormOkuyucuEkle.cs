@@ -111,6 +111,29 @@ namespace WinFormKOS
                 File.Copy(okuyucuFoto, Application.StartupPath + "/profil/" + okuyucuId + ".jpg", true);
             }
         }
+
+        void temizle()
+        {
+            okuyucuId = 0;
+            okuyucuFoto = "";
+            pictureProfil.ImageLocation = Helper.profilPath(0);
+            radiobtnErkek.Checked = false;
+            radiobtnKadin.Checked = false;
+
+            foreach (var item in tableLayoutPanel.Controls)
+            {
+                if (item is TextBox)
+                {
+                    ((TextBox)item).Text = "";
+                }
+                if (item is MaskedTextBox)
+                {
+                    ((MaskedTextBox)item).Text = "";
+                }
+            }
+        }
+
+
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             if(okuyucuId > 0)
@@ -187,6 +210,11 @@ namespace WinFormKOS
             {
                 MessageBox.Show("Okuyucu Seçiniz");
             }
+        }
+
+        private void btnTemizle_Click(object sender, EventArgs e)
+        {
+            temizle();
         }
     }
 }
