@@ -107,6 +107,9 @@ namespace WinFormKOS
                     {
                         radiobtnKadin.Checked = true;
                     }
+                    txtSinif.Text = row["sinifi"].ToString();
+                    txtOkulNo.Text = row["okulNo"].ToString();
+                    
 
 
 
