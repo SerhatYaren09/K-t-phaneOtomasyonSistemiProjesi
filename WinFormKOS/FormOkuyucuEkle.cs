@@ -22,7 +22,7 @@ namespace WinFormKOS
         int okuyucuId = 0;
         private void FormOkuyucuEkle_Load(object sender, EventArgs e)
         {
-
+            okuyucularLoad();
         }
         void okuyucuEkle()
         {
@@ -48,9 +48,13 @@ namespace WinFormKOS
           object value = IDataBase.executeScaler("Inser Into okuyucular (adi, soyadi ,cinsiyeti, sinifi, okulNo, cepTel, adres) Values (@adi, @soyadi , @cinsiyeti, @sinifi, @okulNo, @cepTel, @adres)", parameters);
             okuyucuId = Convert.ToInt32(value);
 
-            MessageBox.Show(okuyucuId.ToString());
+            okuyucularLoad();
         }
 
+        void okuyucularLoad()
+        {
+            dg.DataSource = IDataBase.DataToDataTable("Select * From okuyucular Where aktif= 1");
+        }
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             okuyucuEkle();
