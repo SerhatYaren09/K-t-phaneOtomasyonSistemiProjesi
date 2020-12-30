@@ -103,7 +103,14 @@ namespace WinFormKOS
         }
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            okuyucuEkle();
+            if(okuyucuId > 0)
+            {
+                okuyucuGuncelle();
+            }
+            else
+            {
+                okuyucuEkle();
+            }
         }
 
         private void btnFotoSec_Click(object sender, EventArgs e)
