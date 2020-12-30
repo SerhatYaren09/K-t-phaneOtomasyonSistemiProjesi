@@ -26,7 +26,7 @@ namespace WinFormKOS
         {
             okuyucularLoad();
         }
-        void okuyucuEkle()
+        void okuyucuGuncelle()
         {
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@adi", SqlDbType.VarChar) { Value = txtAd.Text });
@@ -46,15 +46,47 @@ namespace WinFormKOS
             parameters.Add(new SqlParameter("@okulNo", SqlDbType.VarChar) { Value = txtOkulNo.Text });
             parameters.Add(new SqlParameter("@cepTel", SqlDbType.VarChar) { Value = maskedCepTel.Text });
             parameters.Add(new SqlParameter("@adres", SqlDbType.VarChar) { Value = txtAdres.Text });
+            parameters.Add(new SqlParameter("@id", SqlDbType.Int) { Value = okuyucuId });
 
-          object value = IDataBase.executeScaler("Insert Into okuyucular(adi, soyadi ,cinsiyeti, sinifi, okulNo, cepTel, adres) Values(@adi, @soyadi , @cinsiyeti, @sinifi, @okulNo, @cepTel, @adres) Select @@IDENTITY", parameters);
+            IDataBase.executeNonQuery("Update okuyucular Set adi = @adi , soyadi = @soyadi , cinsiyeti = @cinsiyeti , sinifi = @sinifi , okulNo = @okulNo , cepTel = @cepTel , adres = @adres Where id = @id", parameters);
+         
+            fotoSave();
+            okuyucularLoad();
+            
+        }
+
+        void okuyucuEkle()
+        {
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@adi", SqlDbType.VarChar) { Value = txtAd.Text });
+            parameters.Add(new SqlParameter("@soyadi", SqlDbType.VarChar) { Value = txtSoyad.Text });
+            string cinsiyet = "";
+            if (radiobtnErkek.Checked)
+            {
+                cinsiyet = radiobtnErkek.Text;
+            }
+            else if (radiobtnKadin.Checked)
+            {
+                cinsiyet = radiobtnKadin.Text;
+            }
+
+            parameters.Add(new SqlParameter("@cinsiyeti", SqlDbType.VarChar) { Value = cinsiyet });
+            parameters.Add(new SqlParameter("@sinifi", SqlDbType.VarChar) { Value = txtSinif.Text });
+            parameters.Add(new SqlParameter("@okulNo", SqlDbType.VarChar) { Value = txtOkulNo.Text });
+            parameters.Add(new SqlParameter("@cepTel", SqlDbType.VarChar) { Value = maskedCepTel.Text });
+            parameters.Add(new SqlParameter("@adres", SqlDbType.VarChar) { Value = txtAdres.Text });
+
+            object value = IDataBase.executeScaler("Insert Into okuyucular(adi, soyadi ,cinsiyeti, sinifi, okulNo, cepTel, adres) Values(@adi, @soyadi , @cinsiyeti, @sinifi, @okulNo, @cepTel, @adres) Select @@IDENTITY", parameters);
             okuyucuId = Convert.ToInt32(value);
 
             fotoSave();
 
             okuyucularLoad();
-            
+
         }
+
+
+
 
         void okuyucularLoad()
         {
@@ -95,7 +127,7 @@ namespace WinFormKOS
                 radiobtnErkek.Checked = false;
                 radiobtnKadin.Checked = false;
 
-                foreach (DataRow row in IDataBase.DataToDataTable("Select * From okuyucular Where id = @id", new SqlParameter("@id", SqlDbType.Int) { Value = okuyucuId }).Rows)
+                foreach (DataRow row in IDataBase.DataToDataTable("Select * From okuyucular Where aktif = 1 and id = @id", new SqlParameter("@id", SqlDbType.Int) { Value = okuyucuId }).Rows)
                 {
                     txtAd.Text = row["adi"].ToString();
                     txtSoyad.Text = row["soyadi"].ToString();
