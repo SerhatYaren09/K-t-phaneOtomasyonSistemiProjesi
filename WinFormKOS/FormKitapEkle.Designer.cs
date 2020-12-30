@@ -222,6 +222,7 @@ namespace WinFormKOS
             // 
             this.txtKayitNo.Location = new System.Drawing.Point(101, 3);
             this.txtKayitNo.Name = "txtKayitNo";
+            this.txtKayitNo.ReadOnly = true;
             this.txtKayitNo.Size = new System.Drawing.Size(176, 22);
             this.txtKayitNo.TabIndex = 11;
             // 
@@ -230,7 +231,7 @@ namespace WinFormKOS
             this.txtKitapAdi.Location = new System.Drawing.Point(101, 36);
             this.txtKitapAdi.Name = "txtKitapAdi";
             this.txtKitapAdi.Size = new System.Drawing.Size(176, 22);
-            this.txtKitapAdi.TabIndex = 12;
+            this.txtKitapAdi.TabIndex = 0;
             // 
             // cbbYazarAdi
             // 
@@ -238,7 +239,7 @@ namespace WinFormKOS
             this.cbbYazarAdi.Location = new System.Drawing.Point(101, 69);
             this.cbbYazarAdi.Name = "cbbYazarAdi";
             this.cbbYazarAdi.Size = new System.Drawing.Size(176, 24);
-            this.cbbYazarAdi.TabIndex = 13;
+            this.cbbYazarAdi.TabIndex = 1;
             // 
             // cbbYayınevi
             // 
@@ -246,21 +247,21 @@ namespace WinFormKOS
             this.cbbYayınevi.Location = new System.Drawing.Point(101, 102);
             this.cbbYayınevi.Name = "cbbYayınevi";
             this.cbbYayınevi.Size = new System.Drawing.Size(176, 24);
-            this.cbbYayınevi.TabIndex = 14;
+            this.cbbYayınevi.TabIndex = 2;
             // 
             // txtBasimYil
             // 
             this.txtBasimYil.Location = new System.Drawing.Point(101, 135);
             this.txtBasimYil.Name = "txtBasimYil";
             this.txtBasimYil.Size = new System.Drawing.Size(176, 22);
-            this.txtBasimYil.TabIndex = 15;
+            this.txtBasimYil.TabIndex = 3;
             // 
             // txtSayfaSayisi
             // 
             this.txtSayfaSayisi.Location = new System.Drawing.Point(101, 168);
             this.txtSayfaSayisi.Name = "txtSayfaSayisi";
             this.txtSayfaSayisi.Size = new System.Drawing.Size(176, 22);
-            this.txtSayfaSayisi.TabIndex = 16;
+            this.txtSayfaSayisi.TabIndex = 4;
             // 
             // cbbTur
             // 
@@ -268,7 +269,7 @@ namespace WinFormKOS
             this.cbbTur.Location = new System.Drawing.Point(101, 201);
             this.cbbTur.Name = "cbbTur";
             this.cbbTur.Size = new System.Drawing.Size(176, 24);
-            this.cbbTur.TabIndex = 17;
+            this.cbbTur.TabIndex = 5;
             // 
             // txtAciklama
             // 
@@ -276,7 +277,7 @@ namespace WinFormKOS
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Size = new System.Drawing.Size(176, 54);
-            this.txtAciklama.TabIndex = 18;
+            this.txtAciklama.TabIndex = 6;
             // 
             // cbbDolap
             // 
@@ -284,21 +285,21 @@ namespace WinFormKOS
             this.cbbDolap.Location = new System.Drawing.Point(101, 294);
             this.cbbDolap.Name = "cbbDolap";
             this.cbbDolap.Size = new System.Drawing.Size(176, 24);
-            this.cbbDolap.TabIndex = 19;
+            this.cbbDolap.TabIndex = 7;
             // 
             // txtRaf
             // 
             this.txtRaf.Location = new System.Drawing.Point(101, 327);
             this.txtRaf.Name = "txtRaf";
             this.txtRaf.Size = new System.Drawing.Size(176, 22);
-            this.txtRaf.TabIndex = 20;
+            this.txtRaf.TabIndex = 8;
             // 
             // txtSira
             // 
             this.txtSira.Location = new System.Drawing.Point(101, 360);
             this.txtSira.Name = "txtSira";
             this.txtSira.Size = new System.Drawing.Size(176, 22);
-            this.txtSira.TabIndex = 21;
+            this.txtSira.TabIndex = 9;
             // 
             // tableLayoutPanel2
             // 

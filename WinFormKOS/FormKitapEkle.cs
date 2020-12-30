@@ -49,11 +49,23 @@ namespace WinFormKOS
             dg.DataSource = IDataBase.DataToDataTable("Select * From kitaplar Where aktif = 1");
         }
 
+        int getKayitNo()
+        {
+            foreach (DataRow row in IDataBase.DataToDataTable("Select ISNULL(MAX(kayitNo), 0) + 1 From kitaplar").Rows)
+            {
+                return Convert.ToInt32(row[0]);
+            }
+            return 1;
+        }
+
 
             void kitapEkle()
             {
+            int kayitNo = getKayitNo();
+              
+
                 List<SqlParameter> parameters = new List<SqlParameter>();
-                parameters.Add(new SqlParameter("@kayitNo", SqlDbType.Int) { Value = txtKayitNo.Text });
+                parameters.Add(new SqlParameter("@kayitNo", SqlDbType.Int) { Value = kayitNo });
                 parameters.Add(new SqlParameter("@kitapAdi", SqlDbType.VarChar) { Value = txtKitapAdi.Text });
                 parameters.Add(new SqlParameter("@yazarAdi", SqlDbType.VarChar) { Value = cbbYazarAdi.Text });
                 parameters.Add(new SqlParameter("@yayinevi", SqlDbType.VarChar) { Value = cbbYayınevi.Text });
@@ -66,6 +78,9 @@ namespace WinFormKOS
                 parameters.Add(new SqlParameter("@sira", SqlDbType.VarChar) { Value = txtSira.Text });
 
             IDataBase.executeNonQuery("Insert Into kitaplar (kayitNo, kitapAdi, yazarAdi, yayinevi, basimyili, sayfaSayisi, tur, aciklama, dolap, raf, sira) Values(@kayitNo, @kitapAdi, @yazarAdi, @yayinevi, @basimyili, @sayfaSayisi, @tur, @aciklama, @dolap, @raf, @sira)", parameters);
+
+            txtKayitNo.Text = kayitNo.ToString();
+            
             kitaplarLoad();
             }
 
