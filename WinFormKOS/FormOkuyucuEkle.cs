@@ -101,7 +101,7 @@ namespace WinFormKOS
 
         void okuyucularLoad()
         {
-            dg.DataSource = IDataBase.DataToDataTable("Select * From okuyucular");
+            dg.DataSource = IDataBase.DataToDataTable("Select * From okuyucular Where adi+' '+soyadi Like @search", new SqlParameter("@search", SqlDbType.VarChar) { Value = string.Format("%{0}%", txtFiltrele.Text) });
             dg.Columns["id"].Visible = false;
         }
 
