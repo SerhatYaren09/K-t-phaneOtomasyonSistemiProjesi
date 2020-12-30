@@ -112,7 +112,22 @@ namespace WinFormKOS
             kitaplarLoad();
         }
 
+        void temizle()
+        {
+            kitapId = 0;
 
+            foreach (var item in tableLayoutPanel1.Controls)
+            {
+                if(item is TextBox)
+                {
+                    ((TextBox)item).Text = "";
+                }
+                if(item is ComboBox)
+                {
+                    ((ComboBox)item).Text = "";
+                }
+            }
+        }
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
@@ -169,6 +184,11 @@ namespace WinFormKOS
             {
                 MessageBox.Show("Kitap Seçiniz");
             }
+        }
+
+        private void btnTemizle_Click(object sender, EventArgs e)
+        {
+            temizle();
         }
     }
     }
