@@ -53,5 +53,10 @@ namespace WinFormKOS
                 dg.DataSource = IDataBase.DataToDataTable("Select * From " + getTabloName());
             }
         }
+
+        private void cbbTableName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tableLoad();
+        }
     }
 }

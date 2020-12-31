@@ -94,6 +94,7 @@ namespace WinFormKOS
             this.cbbTableName.Name = "cbbTableName";
             this.cbbTableName.Size = new System.Drawing.Size(157, 24);
             this.cbbTableName.TabIndex = 2;
+            this.cbbTableName.SelectedIndexChanged += new System.EventHandler(this.cbbTableName_SelectedIndexChanged);
             // 
             // txtAd
             // 
