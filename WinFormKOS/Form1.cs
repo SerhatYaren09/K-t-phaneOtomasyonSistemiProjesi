@@ -69,6 +69,15 @@ namespace WinFormKOS
             IDataBase.executeNonQuery("Insert Into " + getTabloName() + "(adi) Values(@adi)", new SqlParameter("@adi", SqlDbType.VarChar) { Value = txtAd.Text });
             tableLoad();
         }
+
+        void guncelle()
+        {
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@adi", SqlDbType.VarChar) { Value = txtAd.Text });
+            parameters.Add(new SqlParameter("@id", SqlDbType.Int) { Value = rowId });
+
+
+        }
         private void cbbTableName_SelectedIndexChanged(object sender, EventArgs e)
         {
             tableLoad();
