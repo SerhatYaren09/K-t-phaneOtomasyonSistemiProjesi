@@ -156,6 +156,7 @@ namespace WinFormKOS
             this.btnTemizle.TabIndex = 2;
             this.btnTemizle.Text = "Temizle";
             this.btnTemizle.UseVisualStyleBackColor = true;
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // dg
             // 

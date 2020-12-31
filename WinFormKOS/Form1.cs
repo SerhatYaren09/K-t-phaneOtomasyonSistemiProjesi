@@ -47,19 +47,19 @@ namespace WinFormKOS
                     return "okuyucular";
 
                 case 6:
-                    return "kullanicilar"; 
+                    return "kullanicilar";
 
                 default:
                     return "";
 
-               
 
-            }    
-            
+
+            }
+
         }
         void tableLoad()
         {
-            if(!string.IsNullOrEmpty(getTableName()))
+            if (!string.IsNullOrEmpty(getTableName()))
             {
                 dg.DataSource = IDataBase.DataToDataTable("Select * From " + getTableName());
             }
@@ -85,7 +85,7 @@ namespace WinFormKOS
 
         void sil()
         {
-            IDataBase.executeNonQuery(" Delete" + getTableName() + " Where id = @id", new SqlParameter("@id", SqlDbType.Int) {Value = rowId });
+            IDataBase.executeNonQuery("Delete " + getTableName() + " Where id = @id", new SqlParameter("@id", SqlDbType.Int) { Value = rowId });
             temizle();
             tableLoad();
 
@@ -104,13 +104,13 @@ namespace WinFormKOS
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(getTableName()))
+            if (string.IsNullOrEmpty(getTableName()))
             {
                 MessageBox.Show("Tablo seçimi yapınız");
                 return;
             }
 
-            if(rowId > 0)
+            if (rowId > 0)
             {
                 guncelle();
             }
@@ -122,7 +122,7 @@ namespace WinFormKOS
 
         private void dg_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex > -1)
+            if (e.RowIndex > -1)
             {
                 rowId = Convert.ToInt32(dg.Rows[e.RowIndex].Cells["id"].Value);
                 txtAd.Text = dg.Rows[e.RowIndex].Cells["adi"].Value.ToString();
@@ -144,6 +144,10 @@ namespace WinFormKOS
             {
                 MessageBox.Show("Satır Seçiniz");
             }
+        }
+       private void btnTemizle_Click(object sender, EventArgs e)
+        {
+            temizle();
         }
     }
 }
