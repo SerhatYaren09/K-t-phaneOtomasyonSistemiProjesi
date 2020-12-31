@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,7 @@ namespace WinFormKOS
             InitializeComponent();
         }
 
+        int rowId = 0;
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -62,10 +64,19 @@ namespace WinFormKOS
                 dg.DataSource = IDataBase.DataToDataTable("Select * From " + getTabloName());
             }
         }
-
+        void ekle()
+        {
+            IDataBase.executeNonQuery("Insert Into " + getTabloName() + "(adi) Values(@adi)", new SqlParameter("@adi", SqlDbType.VarChar) { Value = txtAd.Text });
+            tableLoad();
+        }
         private void cbbTableName_SelectedIndexChanged(object sender, EventArgs e)
         {
             tableLoad();
+        }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            ekle();
         }
     }
 }
