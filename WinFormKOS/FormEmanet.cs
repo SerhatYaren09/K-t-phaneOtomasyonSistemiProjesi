@@ -36,5 +36,10 @@ namespace WinFormKOS
         {
             okuyucularLoad();
         }
+
+        private void txtFiltreleKitap_TextChanged(object sender, EventArgs e)
+        {
+            kitaplarLoad();
+        }
     }
 }

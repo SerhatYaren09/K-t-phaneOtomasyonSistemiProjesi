@@ -325,6 +325,7 @@ namespace WinFormKOS
             this.txtFiltreleKitap.Name = "txtFiltreleKitap";
             this.txtFiltreleKitap.Size = new System.Drawing.Size(140, 22);
             this.txtFiltreleKitap.TabIndex = 5;
+            this.txtFiltreleKitap.TextChanged += new System.EventHandler(this.txtFiltreleKitap_TextChanged);
             // 
             // tableLayoutPanel4
             // 
