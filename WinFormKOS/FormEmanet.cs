@@ -25,7 +25,7 @@ namespace WinFormKOS
         }
         void okuyucularLoad()
         {
-            dgOkuyucular.DataSource = IDataBase.DataToDataTable("Select * From okuyucular Where aktif = 1 and adi+' '+soyadi Like @search", new SqlParameter("@search", SqlDbType.VarChar) { Value = string.Format("%(0)%", txtFiltreleOkuyucu.Text) });
+            dgOkuyucular.DataSource = IDataBase.DataToDataTable("Select * From okuyucular Where aktif = 1 and adi+' '+soyadi Like @search", new SqlParameter("@search", SqlDbType.VarChar) { Value = string.Format("%{0}%", txtFiltreleOkuyucu.Text) });
         }
 
         private void txtFiltreleOkuyucu_TextChanged(object sender, EventArgs e)
