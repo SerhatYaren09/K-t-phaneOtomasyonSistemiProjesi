@@ -76,7 +76,8 @@ namespace WinFormKOS
             parameters.Add(new SqlParameter("@adi", SqlDbType.VarChar) { Value = txtAd.Text });
             parameters.Add(new SqlParameter("@id", SqlDbType.Int) { Value = rowId });
 
-
+            IDataBase.executeNonQuery("Update" + getTabloName() + "Set adi = @adi Where id = @id", parameters);
+            tableLoad();
         }
         private void cbbTableName_SelectedIndexChanged(object sender, EventArgs e)
         {
