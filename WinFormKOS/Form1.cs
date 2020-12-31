@@ -121,5 +121,22 @@ namespace WinFormKOS
                 txtAd.Text = dg.Rows[e.RowIndex].Cells["adi"].Value.ToString();
             }
         }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (rowId > 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("Seçili satırı silmek istediğinize emin misiniz?", "Satır Sil", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    sil();
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Satır Seçiniz");
+            }
+        }
     }
 }
