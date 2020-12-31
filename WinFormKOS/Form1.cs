@@ -34,6 +34,9 @@ namespace WinFormKOS
                 case 2:
                     return "turler";
 
+                case 3:
+                    return "dolaplar";
+
                 default:
                     return "";
 
