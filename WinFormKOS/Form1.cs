@@ -68,6 +68,7 @@ namespace WinFormKOS
         {
             IDataBase.executeNonQuery("Insert Into " + getTabloName() + "(adi) Values(@adi)", new SqlParameter("@adi", SqlDbType.VarChar) { Value = txtAd.Text });
             tableLoad();
+            MessageBox.Show("Ekleme işlemi başarılı");
         }
 
         void guncelle()
@@ -78,6 +79,8 @@ namespace WinFormKOS
 
             IDataBase.executeNonQuery("Update" + getTabloName() + "Set adi = @adi Where id = @id", parameters);
             tableLoad();
+
+            MessageBox.Show("Güncelleme işlemi başarılı");
         }
         private void cbbTableName_SelectedIndexChanged(object sender, EventArgs e)
         {
