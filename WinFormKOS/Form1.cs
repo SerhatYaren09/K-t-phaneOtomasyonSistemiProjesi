@@ -82,6 +82,14 @@ namespace WinFormKOS
 
             MessageBox.Show("Güncelleme işlemi başarılı");
         }
+
+        void sil()
+        {
+            IDataBase.executeNonQuery(" Delete" + getTableName() + " Where id = @id", new SqlParameter("@id", SqlDbType.Int) {Value = rowId });
+            tableLoad();
+
+            MessageBox.Show("Silme işlemi başarılı");
+        }
         private void cbbTableName_SelectedIndexChanged(object sender, EventArgs e)
         {
             tableLoad();
