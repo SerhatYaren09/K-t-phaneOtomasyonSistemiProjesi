@@ -136,7 +136,11 @@ namespace WinFormKOS
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            
+           if(string.IsNullOrEmpty(txtKitapAdi.Text)||string.IsNullOrEmpty(cbbYazarAdi.Text) || string.IsNullOrEmpty(cbbTur.Text))
+            {
+                MessageBox.Show("Kitap Adı, Yazar Adı ve Kitap Türü alanları boş geçilemez");
+                return;
+            }
 
             if(kitapId > 0)
             {

@@ -40,15 +40,6 @@ namespace WinFormKOS
                 case 3:
                     return "dolaplar";
 
-                case 4:
-                    return "kitaplar";
-
-                case 5:
-                    return "okuyucular";
-
-                case 6:
-                    return "kullanicilar";
-
                 default:
                     return "";
 
@@ -62,6 +53,7 @@ namespace WinFormKOS
             if (!string.IsNullOrEmpty(getTableName()))
             {
                 dg.DataSource = IDataBase.DataToDataTable("Select * From " + getTableName());
+                dg.Columns["id"].Visible = false;
             }
         }
         void ekle()

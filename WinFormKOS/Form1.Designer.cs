@@ -35,9 +35,9 @@ namespace WinFormKOS
             this.cbbTableName = new System.Windows.Forms.ComboBox();
             this.txtAd = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnKaydet = new System.Windows.Forms.Button();
-            this.btnSil = new System.Windows.Forms.Button();
             this.btnTemizle = new System.Windows.Forms.Button();
+            this.btnSil = new System.Windows.Forms.Button();
+            this.btnKaydet = new System.Windows.Forms.Button();
             this.dg = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -90,10 +90,7 @@ namespace WinFormKOS
             "Yazarlar",
             "Yayınevleri",
             "Türler",
-            "Dolaplar",
-            "Kitaplar",
-            "Okuyucular",
-            "Kullanıcılar"});
+            "Dolaplar"});
             this.cbbTableName.Location = new System.Drawing.Point(90, 3);
             this.cbbTableName.Name = "cbbTableName";
             this.cbbTableName.Size = new System.Drawing.Size(157, 24);
@@ -121,20 +118,20 @@ namespace WinFormKOS
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(250, 35);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
-            // btnKaydet
+            // btnTemizle
             // 
-            this.btnKaydet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnKaydet.Location = new System.Drawing.Point(3, 3);
-            this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(77, 29);
-            this.btnKaydet.TabIndex = 0;
-            this.btnKaydet.Text = "Kaydet";
-            this.btnKaydet.UseVisualStyleBackColor = true;
-            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
+            this.btnTemizle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTemizle.Location = new System.Drawing.Point(169, 3);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(78, 29);
+            this.btnTemizle.TabIndex = 2;
+            this.btnTemizle.Text = "Temizle";
+            this.btnTemizle.UseVisualStyleBackColor = true;
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // btnSil
             // 
@@ -147,16 +144,16 @@ namespace WinFormKOS
             this.btnSil.UseVisualStyleBackColor = true;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
-            // btnTemizle
+            // btnKaydet
             // 
-            this.btnTemizle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTemizle.Location = new System.Drawing.Point(169, 3);
-            this.btnTemizle.Name = "btnTemizle";
-            this.btnTemizle.Size = new System.Drawing.Size(78, 29);
-            this.btnTemizle.TabIndex = 2;
-            this.btnTemizle.Text = "Temizle";
-            this.btnTemizle.UseVisualStyleBackColor = true;
-            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
+            this.btnKaydet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnKaydet.Location = new System.Drawing.Point(3, 3);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(77, 29);
+            this.btnKaydet.TabIndex = 0;
+            this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // dg
             // 
