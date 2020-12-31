@@ -89,7 +89,20 @@ namespace WinFormKOS
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            ekle();
+            if(string.IsNullOrEmpty(getTabloName()))
+            {
+                MessageBox.Show("Tablo seçimi yapınız");
+                return;
+            }
+
+            if(rowId > 0)
+            {
+                guncelle();
+            }
+            else
+            {
+                ekle();
+            }
         }
 
         private void dg_CellClick(object sender, DataGridViewCellEventArgs e)
