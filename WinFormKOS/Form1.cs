@@ -78,5 +78,14 @@ namespace WinFormKOS
         {
             ekle();
         }
+
+        private void dg_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex > -1)
+            {
+                rowId = Convert.ToInt32(dg.Rows[e.RowIndex].Cells["id"].Value);
+                txtAd.Text = dg.Rows[e.RowIndex].Cells["adi"].Value.ToString();
+            }
+        }
     }
 }

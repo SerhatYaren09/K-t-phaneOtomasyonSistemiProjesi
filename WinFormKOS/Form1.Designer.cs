@@ -158,6 +158,9 @@ namespace WinFormKOS
             // 
             // dg
             // 
+            this.dg.AllowUserToAddRows = false;
+            this.dg.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dg.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg.Location = new System.Drawing.Point(255, 12);
             this.dg.MultiSelect = false;
@@ -169,6 +172,7 @@ namespace WinFormKOS
             this.dg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dg.Size = new System.Drawing.Size(649, 523);
             this.dg.TabIndex = 2;
+            this.dg.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_CellClick);
             // 
             // Form1
             // 
