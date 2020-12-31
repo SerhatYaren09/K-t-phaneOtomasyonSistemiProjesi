@@ -155,6 +155,7 @@ namespace WinFormKOS
             this.txtFiltreleOkuyucu.Name = "txtFiltreleOkuyucu";
             this.txtFiltreleOkuyucu.Size = new System.Drawing.Size(140, 22);
             this.txtFiltreleOkuyucu.TabIndex = 2;
+            this.txtFiltreleOkuyucu.TextChanged += new System.EventHandler(this.txtFiltreleOkuyucu_TextChanged);
             // 
             // label1
             // 
@@ -369,6 +370,7 @@ namespace WinFormKOS
             this.Name = "FormEmanet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Emanet İşlemleri";
+            this.Load += new System.EventHandler(this.FormEmanet_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
