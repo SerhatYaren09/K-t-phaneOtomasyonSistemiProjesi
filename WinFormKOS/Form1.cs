@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormKOS.Model;
 
 namespace WinFormKOS
 {
@@ -44,6 +45,13 @@ namespace WinFormKOS
 
             }    
             
+        }
+        void tableLoad()
+        {
+            if(!string.IsNullOrEmpty(getTabloName()))
+            {
+                dg.DataSource = IDataBase.DataToDataTable("Select * From " + getTabloName());
+            }
         }
     }
 }
