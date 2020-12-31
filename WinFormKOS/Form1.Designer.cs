@@ -89,7 +89,10 @@ namespace WinFormKOS
             "Yazarlar",
             "Yayınevleri",
             "Türler",
-            "Dolaplar"});
+            "Dolaplar",
+            "Kitaplar",
+            "Okuyucular",
+            "Kullanıcılar"});
             this.cbbTableName.Location = new System.Drawing.Point(90, 3);
             this.cbbTableName.Name = "cbbTableName";
             this.cbbTableName.Size = new System.Drawing.Size(157, 24);
