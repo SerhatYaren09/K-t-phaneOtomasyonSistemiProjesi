@@ -217,5 +217,10 @@ namespace WinFormKOS
         {
             temizle();
         }
+
+        private void txtFiltrele_TextChanged(object sender, EventArgs e)
+        {
+            okuyucularLoad();
+        }
     }
 }

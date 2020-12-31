@@ -396,6 +396,7 @@ namespace WinFormKOS
             this.txtFiltrele.Name = "txtFiltrele";
             this.txtFiltrele.Size = new System.Drawing.Size(186, 22);
             this.txtFiltrele.TabIndex = 12;
+            this.txtFiltrele.TextChanged += new System.EventHandler(this.txtFiltrele_TextChanged);
             // 
             // openFileDialog
             // 
