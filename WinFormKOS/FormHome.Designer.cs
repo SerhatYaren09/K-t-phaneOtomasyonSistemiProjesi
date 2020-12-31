@@ -62,6 +62,7 @@ namespace WinFormKOS
             this.btnEmanetIslem.Text = "Emanet İşlemleri";
             this.btnEmanetIslem.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEmanetIslem.UseVisualStyleBackColor = true;
+            this.btnEmanetIslem.Click += new System.EventHandler(this.btnEmanetIslem_Click);
             // 
             // btnKitapEkle
             // 

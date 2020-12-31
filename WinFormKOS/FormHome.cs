@@ -40,5 +40,11 @@ namespace WinFormKOS
             Form1 formEdit = new Form1();
             formEdit.Show();
         }
+
+        private void btnEmanetIslem_Click(object sender, EventArgs e)
+        {
+            FormEmanet formEmanet = new FormEmanet();
+            formEmanet.Show();
+        }
     }
 }
