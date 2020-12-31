@@ -31,6 +31,9 @@ namespace WinFormKOS
                 case 1:
                     return "yayinevleri";
 
+                case 2:
+                    return "turler";
+
                 default:
                     return "";
 
