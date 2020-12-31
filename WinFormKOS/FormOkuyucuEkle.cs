@@ -137,7 +137,7 @@ namespace WinFormKOS
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtAd.Text) || string.IsNullOrEmpty(txtSoyad.Text) || string.IsNullOrEmpty(maskedCepTel.Text))
+            if (string.IsNullOrEmpty(txtAd.Text) || string.IsNullOrEmpty(txtSoyad.Text) || maskedCepTel.MaskFull == false)
             {
                 MessageBox.Show("Ad, SoyAd ve Cep telefonu alanları boş geçilemez");
                 return;
