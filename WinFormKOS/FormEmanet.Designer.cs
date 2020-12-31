@@ -128,11 +128,18 @@ namespace WinFormKOS
             // 
             // dgOkuyucular
             // 
+            this.dgOkuyucular.AllowUserToAddRows = false;
+            this.dgOkuyucular.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgOkuyucular.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgOkuyucular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgOkuyucular.Location = new System.Drawing.Point(237, 31);
+            this.dgOkuyucular.MultiSelect = false;
             this.dgOkuyucular.Name = "dgOkuyucular";
+            this.dgOkuyucular.ReadOnly = true;
+            this.dgOkuyucular.RowHeadersVisible = false;
             this.dgOkuyucular.RowHeadersWidth = 51;
             this.dgOkuyucular.RowTemplate.Height = 24;
+            this.dgOkuyucular.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgOkuyucular.Size = new System.Drawing.Size(986, 135);
             this.dgOkuyucular.TabIndex = 1;
             // 
@@ -288,11 +295,18 @@ namespace WinFormKOS
             // 
             // dgKitaplar
             // 
+            this.dgKitaplar.AllowUserToAddRows = false;
+            this.dgKitaplar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgKitaplar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgKitaplar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgKitaplar.Location = new System.Drawing.Point(237, 35);
+            this.dgKitaplar.MultiSelect = false;
             this.dgKitaplar.Name = "dgKitaplar";
+            this.dgKitaplar.ReadOnly = true;
+            this.dgKitaplar.RowHeadersVisible = false;
             this.dgKitaplar.RowHeadersWidth = 51;
             this.dgKitaplar.RowTemplate.Height = 24;
+            this.dgKitaplar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgKitaplar.Size = new System.Drawing.Size(986, 156);
             this.dgKitaplar.TabIndex = 2;
             // 
