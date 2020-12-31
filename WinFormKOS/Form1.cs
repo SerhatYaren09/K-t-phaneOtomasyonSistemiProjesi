@@ -86,9 +86,16 @@ namespace WinFormKOS
         void sil()
         {
             IDataBase.executeNonQuery(" Delete" + getTableName() + " Where id = @id", new SqlParameter("@id", SqlDbType.Int) {Value = rowId });
+            temizle();
             tableLoad();
 
             MessageBox.Show("Silme işlemi başarılı");
+        }
+
+        void temizle()
+        {
+            rowId = 0;
+            txtAd.Text = "";
         }
         private void cbbTableName_SelectedIndexChanged(object sender, EventArgs e)
         {
