@@ -34,5 +34,11 @@ namespace WinFormKOS
             FormOkuyucuEkle formOkuyucuEkle = new FormOkuyucuEkle();
             formOkuyucuEkle.Show();
         }
+
+        private void btnAyarlar_Click(object sender, EventArgs e)
+        {
+            Form1 formEdit = new Form1();
+            formEdit.Show();
+        }
     }
 }

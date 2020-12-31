@@ -108,6 +108,7 @@ namespace WinFormKOS
             this.btnAyarlar.Text = "Ayarlar";
             this.btnAyarlar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAyarlar.UseVisualStyleBackColor = true;
+            this.btnAyarlar.Click += new System.EventHandler(this.btnAyarlar_Click);
             // 
             // btnCikis
             // 
