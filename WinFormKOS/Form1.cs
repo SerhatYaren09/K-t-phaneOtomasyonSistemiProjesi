@@ -23,14 +23,20 @@ namespace WinFormKOS
         }
         string getTabloName()
         {
-           switch(cbbTableName.SelectedIndex)
+            switch (cbbTableName.SelectedIndex)
             {
                 case 0:
                     return "yazarlar";
 
+                case 1:
+                    return "yayinevleri";
+
                 default:
                     return "";
-            }
+
+               
+
+            }    
             
         }
     }
