@@ -24,7 +24,7 @@ namespace WinFormKOS
         {
 
         }
-        string getTabloName()
+        string getTableName()
         {
             switch (cbbTableName.SelectedIndex)
             {
@@ -44,10 +44,10 @@ namespace WinFormKOS
                     return "kitaplar";
 
                 case 5:
-                    return "kullanicilar";
+                    return "okuyucular";
 
                 case 6:
-                    return "okuyucular";
+                    return "kullanicilar"; 
 
                 default:
                     return "";
@@ -59,14 +59,14 @@ namespace WinFormKOS
         }
         void tableLoad()
         {
-            if(!string.IsNullOrEmpty(getTabloName()))
+            if(!string.IsNullOrEmpty(getTableName()))
             {
-                dg.DataSource = IDataBase.DataToDataTable("Select * From " + getTabloName());
+                dg.DataSource = IDataBase.DataToDataTable("Select * From " + getTableName());
             }
         }
         void ekle()
         {
-            IDataBase.executeNonQuery("Insert Into " + getTabloName() + "(adi) Values(@adi)", new SqlParameter("@adi", SqlDbType.VarChar) { Value = txtAd.Text });
+            IDataBase.executeNonQuery("Insert Into " + getTableName() + "(adi) Values(@adi)", new SqlParameter("@adi", SqlDbType.VarChar) { Value = txtAd.Text });
             tableLoad();
             MessageBox.Show("Ekleme işlemi başarılı");
         }
@@ -77,7 +77,7 @@ namespace WinFormKOS
             parameters.Add(new SqlParameter("@adi", SqlDbType.VarChar) { Value = txtAd.Text });
             parameters.Add(new SqlParameter("@id", SqlDbType.Int) { Value = rowId });
 
-            IDataBase.executeNonQuery("Update" + getTabloName() + "Set adi = @adi Where id = @id", parameters);
+            IDataBase.executeNonQuery(" Update " + getTableName() + " Set adi = @adi Where id = @id", parameters);
             tableLoad();
 
             MessageBox.Show("Güncelleme işlemi başarılı");
@@ -89,7 +89,7 @@ namespace WinFormKOS
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(getTabloName()))
+            if(string.IsNullOrEmpty(getTableName()))
             {
                 MessageBox.Show("Tablo seçimi yapınız");
                 return;
