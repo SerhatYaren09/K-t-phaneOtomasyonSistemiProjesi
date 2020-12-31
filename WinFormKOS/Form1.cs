@@ -38,6 +38,15 @@ namespace WinFormKOS
                 case 3:
                     return "dolaplar";
 
+                case 4:
+                    return "kitaplar";
+
+                case 5:
+                    return "kullanicilar";
+
+                case 6:
+                    return "okuyucular";
+
                 default:
                     return "";
 
