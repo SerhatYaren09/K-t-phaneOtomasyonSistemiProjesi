@@ -49,7 +49,7 @@ namespace WinFormKOS
                 gecikmeBedeli = string.Format("{0:C}", cezaTL);
                 if (cezaTL > 0)
                 {
-                    lblGecikmeBedeli.Text = "Ceza " +string.Format("{0:C}", cezaTL);
+                    lblGecikmeBedeli.Text = "Ceza " + gecikmeBedeli;
                     lblGecikmeBedeli.BackColor = Color.Red;
                 }
                 else
@@ -208,7 +208,18 @@ namespace WinFormKOS
 
         private void btnSureUzat_Click(object sender, EventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(gecikmeBedeli))
+            {
+                DialogResult dialogResult = MessageBox.Show("Okuyucunun " + gecikmeBedeli + "var. Gecikme Bedeli teslim alındı mı?", "Gecikme Bedeli");
+                if (dialogResult == DialogResult.Yes)
+                {
+                    sureUzat();
+                }
+            }
+            else
+            {
+                sureUzat();
+           }
         }
     }
 }
