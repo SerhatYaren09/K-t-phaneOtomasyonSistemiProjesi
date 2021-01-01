@@ -18,6 +18,11 @@ namespace WinFormKOS
             InitializeComponent();
         }
 
+        void dataGridViewLoad()
+        {
+            dgEmanet.DataSource = IDataBase.DataToDataTable("Select * From kitaplar Where aktif = 1 and durum = 0");
+            dgMevcutKitaplar.DataSource = IDataBase.DataToDataTable("Select * From kitaplar Where aktif = 1 and durum = 1");
+        }
         private void FormHome_Load(object sender, EventArgs e)
         {
            // MessageBox.Show(UserInfo.userId.ToString());
