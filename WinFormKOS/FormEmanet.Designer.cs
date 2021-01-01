@@ -100,6 +100,7 @@ namespace WinFormKOS
             // dgOkuyucular
             // 
             this.dgOkuyucular.AllowUserToAddRows = false;
+            this.dgOkuyucular.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgOkuyucular.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgOkuyucular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgOkuyucular.Location = new System.Drawing.Point(237, 35);
@@ -110,7 +111,7 @@ namespace WinFormKOS
             this.dgOkuyucular.RowHeadersWidth = 51;
             this.dgOkuyucular.RowTemplate.Height = 24;
             this.dgOkuyucular.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgOkuyucular.Size = new System.Drawing.Size(986, 156);
+            this.dgOkuyucular.Size = new System.Drawing.Size(986, 153);
             this.dgOkuyucular.TabIndex = 2;
             this.dgOkuyucular.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgOkuyucular_CellClick);
             this.dgOkuyucular.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgOkuyucular_CellContentClick);

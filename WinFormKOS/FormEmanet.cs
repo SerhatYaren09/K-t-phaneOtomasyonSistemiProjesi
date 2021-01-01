@@ -47,6 +47,9 @@ namespace WinFormKOS
         void okuyucularLoad()
         {
             dgOkuyucular.DataSource = IDataBase.DataToDataTable("Select * From okuyucular Where aktif = 1 and adi+' '+soyadi Like @search", new SqlParameter("@search", SqlDbType.VarChar) { Value = string.Format("%{0}%", txtFiltreleOkuyucu.Text) });
+            dgOkuyucular.Columns["id"].Visible = false;
+            dgOkuyucular.Columns["aktif"].Visible = false;
+
         }
         void kitaplarLoad()
         {
