@@ -46,7 +46,7 @@ namespace WinFormKOS
                 int cezaTL = getGecikmeBedeli();
                 if(cezaTL > 0)
                 {
-                    lblGecikmeBedeli.Text = "Gecikme Bedeli " +string.Format("{0:C}", cezaTL);
+                    lblGecikmeBedeli.Text = "Ceza " +string.Format("{0:C}", cezaTL);
                     lblGecikmeBedeli.BackColor = Color.Red;
                 }
                 else
@@ -82,7 +82,7 @@ namespace WinFormKOS
         }
         void kitaplarLoad()
         {
-            dgKitaplar.DataSource = IDataBase.DataToDataTable("Select * From kitaplar Where kitapAdi AND durum = 1 Like @search", new SqlParameter("@search", SqlDbType.VarChar) { Value = string.Format("%{0}%", txtFiltreleKitap.Text) });
+            dgKitaplar.DataSource = IDataBase.DataToDataTable("Select * From kitaplar Where durum = 1 AND kitapAdi Like @search", new SqlParameter("@search", SqlDbType.VarChar) { Value = string.Format("%{0}%", txtFiltreleKitap.Text) });
             dgKitaplar.Columns["id"].Visible = false;
             dgKitaplar.Columns["aktif"].Visible = false;
         }
