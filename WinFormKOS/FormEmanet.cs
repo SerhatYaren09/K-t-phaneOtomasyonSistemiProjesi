@@ -197,7 +197,7 @@ namespace WinFormKOS
         {
             if(e.RowIndex > -1)
             {
-                if(okuyucuId > 0)
+                if(okuyucuId == 0)
                 {
                     MessageBox.Show("Okuyucu seçiniz");
                     return;
