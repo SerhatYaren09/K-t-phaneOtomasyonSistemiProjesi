@@ -214,7 +214,7 @@ namespace WinFormKOS
             this.Controls.Add(this.btnEmanetIslem);
             this.Name = "FormHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormHome";
+            this.Text = "Menüler";
             this.Load += new System.EventHandler(this.FormHome_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
