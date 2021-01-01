@@ -78,5 +78,9 @@ namespace WinFormKOS
 
         }
 
+        private void cbbIstatistik_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            istatistikGor();
+        }
     }
 }
