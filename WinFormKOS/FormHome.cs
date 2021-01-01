@@ -49,7 +49,8 @@ namespace WinFormKOS
 
         private void btnIstatistik_Click(object sender, EventArgs e)
         {
-
+            FormIstatistik formIstatistik = new FormIstatistik();
+            formIstatistik.Show();
         }
     }
 }
