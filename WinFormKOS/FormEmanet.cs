@@ -76,12 +76,19 @@ namespace WinFormKOS
             if(kitapId == 0 || okuyucuId == 0)
             {
                 MessageBox.Show("Kitap veya okuyucu seçmediniz");
+                return;
             }
              if(getEmanetId() > 0)
             {
                 MessageBox.Show("Seçili okuyucunun emaneti var");
                 return;
             }
+
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@kitapId", SqlDbType.Int) { Value = kitapId });
+            parameters.Add(new SqlParameter("@okuyucuId", SqlDbType.Int) { Value = okuyucuId });
+            parameters.Add(new SqlParameter("@emanetVerilisTarihi", SqlDbType.Date) { Value = DateTime.Now });
+            parameters.Add(new SqlParameter("@emanetGeriAlmaTarihi", SqlDbType.Date) { Value = DateTime.Now.AddDays(30) });
 
         }
         int getEmanetId()
