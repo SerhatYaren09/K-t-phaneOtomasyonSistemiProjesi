@@ -19,9 +19,37 @@ namespace WinFormKOS
 
         private void FormIstatistik_Load(object sender, EventArgs e)
         {
-            chart1.Series["Durum"].Points.AddXY("İstanbul", 15000000);
-            chart1.Series["Durum"].Points.AddXY("İzmir", 5000000);
-            chart1.Series["Durum"].Points.AddXY("Aydın", 1000000);
+           
         }
+        
+        /*Okuyucular
+        Kitaplar
+        Yazarlar
+        Türler */
+
+       /* Select adi+' '+soyadi, COUNT(*) From emanetler Inner Join okuyucular On okuyucular.id = emanetler.okuyucuId Where okuyucular.aktif = 1 AND emanetler.aktif = 1 Group By adi+' '+soyadi
+
+        Select kitapAdi, COUNT(*) From emanetler Inner Join kitaplar On kitaplar.id = emanetler.kitapId Group By kitapAdi
+
+        Select yazarAdi, COUNT(*) From emanetler Inner Join kitaplar On kitaplar.id = emanetler.kitapId Group By yazarAdi
+
+        Select tur, COUNT(*) From emanetler Inner Join kitaplar On kitaplar.id = emanetler.kitapId Group By tur
+       */
+
+        void istatistikGor()
+        {
+            string query = "";
+            switch(cbbIstatistik.SelectedIndex)
+            {
+
+                case 0:
+                    query = "Select adi+' '+soyadi, COUNT(*) From emanetler Inner Join okuyucular On okuyucular.id = emanetler.okuyucuId Where okuyucular.aktif = 1 AND emanetler.aktif = 1 Group By adi+' '+soyadi";
+                break;
+
+               default:
+                    break;
+            }
+        }
+
     }
 }
