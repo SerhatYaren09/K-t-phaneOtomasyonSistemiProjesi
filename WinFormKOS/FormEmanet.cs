@@ -46,7 +46,7 @@ namespace WinFormKOS
                 int cezaTL = getGecikmeBedeli();
                 if(cezaTL > 0)
                 {
-                    lblGecikmeBedeli.Text = string.Format("{0:3}", cezaTL);
+                    lblGecikmeBedeli.Text = "Gecikme Bedeli " +string.Format("{0:C}", cezaTL);
                     lblGecikmeBedeli.BackColor = Color.Red;
                 }
                 else
@@ -55,7 +55,8 @@ namespace WinFormKOS
                     lblGecikmeBedeli.BackColor = Color.Transparent;
                 }
 
-
+                kitapId = getEmanetId();
+                getKitapProfil();
             }
         }
 
