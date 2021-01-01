@@ -50,6 +50,9 @@ namespace WinFormKOS
                     query = "Select kitapAdi, COUNT(*) From emanetler Inner Join kitaplar On kitaplar.id = emanetler.kitapId Group By kitapAdi";
                     break;
 
+                case 2:
+                    query = "Select yazarAdi, COUNT(*) From emanetler Inner Join kitaplar On kitaplar.id = emanetler.kitapId Group By yazarAdi";
+                    break;
 
 
                 default:
