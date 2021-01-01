@@ -61,5 +61,20 @@ namespace WinFormKOS
         {
             kitaplarLoad();
         }
+
+        private void dgOkuyucular_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgOkuyucular_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex > -1)
+            {
+                okuyucuId = Convert.ToInt32(dgOkuyucular.Rows[e.RowIndex].Cells["id"].Value);
+                getOkuyucuProfil();
+
+            }
+        }
     }
 }

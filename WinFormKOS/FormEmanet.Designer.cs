@@ -31,39 +31,39 @@ namespace WinFormKOS
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEmanet));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtFiltreleOkuyucu = new System.Windows.Forms.TextBox();
+            this.dgOkuyucular = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureProfil = new System.Windows.Forms.PictureBox();
-            this.dgOkuyucular = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtFiltreleOkuyucu = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblAdSoyad = new System.Windows.Forms.Label();
-            this.lblSinif = new System.Windows.Forms.Label();
-            this.lblOkulNo = new System.Windows.Forms.Label();
             this.lblGecikmeBedeli = new System.Windows.Forms.Label();
+            this.lblOkulNo = new System.Windows.Forms.Label();
+            this.lblSinif = new System.Windows.Forms.Label();
+            this.lblAdSoyad = new System.Windows.Forms.Label();
+            this.pictureProfil = new System.Windows.Forms.PictureBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtFiltreleKitap = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dgKitaplar = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblYazarAdi = new System.Windows.Forms.Label();
+            this.lblKitapAdi = new System.Windows.Forms.Label();
+            this.lblKayitNo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblKayitNo = new System.Windows.Forms.Label();
-            this.lblKitapAdi = new System.Windows.Forms.Label();
-            this.lblYazarAdi = new System.Windows.Forms.Label();
-            this.dgKitaplar = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtFiltreleKitap = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnEmanetEt = new System.Windows.Forms.Button();
-            this.btnSureUzat = new System.Windows.Forms.Button();
             this.btnDusumYap = new System.Windows.Forms.Button();
+            this.btnSureUzat = new System.Windows.Forms.Button();
+            this.btnEmanetEt = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgOkuyucular)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProfil)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgOkuyucular)).BeginInit();
             this.groupBox2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgKitaplar)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,6 +80,41 @@ namespace WinFormKOS
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Okuyucu Seç";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1023, 199);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 17);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Filtrele:";
+            // 
+            // txtFiltreleOkuyucu
+            // 
+            this.txtFiltreleOkuyucu.Location = new System.Drawing.Point(1083, 194);
+            this.txtFiltreleOkuyucu.Name = "txtFiltreleOkuyucu";
+            this.txtFiltreleOkuyucu.Size = new System.Drawing.Size(140, 22);
+            this.txtFiltreleOkuyucu.TabIndex = 2;
+            this.txtFiltreleOkuyucu.TextChanged += new System.EventHandler(this.txtFiltreleOkuyucu_TextChanged);
+            // 
+            // dgOkuyucular
+            // 
+            this.dgOkuyucular.AllowUserToAddRows = false;
+            this.dgOkuyucular.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgOkuyucular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgOkuyucular.Location = new System.Drawing.Point(237, 35);
+            this.dgOkuyucular.MultiSelect = false;
+            this.dgOkuyucular.Name = "dgOkuyucular";
+            this.dgOkuyucular.ReadOnly = true;
+            this.dgOkuyucular.RowHeadersVisible = false;
+            this.dgOkuyucular.RowHeadersWidth = 51;
+            this.dgOkuyucular.RowTemplate.Height = 24;
+            this.dgOkuyucular.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgOkuyucular.Size = new System.Drawing.Size(986, 156);
+            this.dgOkuyucular.TabIndex = 2;
+            this.dgOkuyucular.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgOkuyucular_CellClick);
+            this.dgOkuyucular.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgOkuyucular_CellContentClick);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -91,7 +126,7 @@ namespace WinFormKOS
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 106F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(215, 106);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -115,6 +150,46 @@ namespace WinFormKOS
             this.tableLayoutPanel2.Size = new System.Drawing.Size(129, 100);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
+            // lblGecikmeBedeli
+            // 
+            this.lblGecikmeBedeli.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblGecikmeBedeli.AutoSize = true;
+            this.lblGecikmeBedeli.Location = new System.Drawing.Point(3, 79);
+            this.lblGecikmeBedeli.Name = "lblGecikmeBedeli";
+            this.lblGecikmeBedeli.Size = new System.Drawing.Size(106, 17);
+            this.lblGecikmeBedeli.TabIndex = 3;
+            this.lblGecikmeBedeli.Text = "Gecikme Bedeli";
+            // 
+            // lblOkulNo
+            // 
+            this.lblOkulNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblOkulNo.AutoSize = true;
+            this.lblOkulNo.Location = new System.Drawing.Point(3, 54);
+            this.lblOkulNo.Name = "lblOkulNo";
+            this.lblOkulNo.Size = new System.Drawing.Size(59, 17);
+            this.lblOkulNo.TabIndex = 2;
+            this.lblOkulNo.Text = "Okul No";
+            // 
+            // lblSinif
+            // 
+            this.lblSinif.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblSinif.AutoSize = true;
+            this.lblSinif.Location = new System.Drawing.Point(3, 29);
+            this.lblSinif.Name = "lblSinif";
+            this.lblSinif.Size = new System.Drawing.Size(35, 17);
+            this.lblSinif.TabIndex = 1;
+            this.lblSinif.Text = "Sınıf";
+            // 
+            // lblAdSoyad
+            // 
+            this.lblAdSoyad.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblAdSoyad.AutoSize = true;
+            this.lblAdSoyad.Location = new System.Drawing.Point(3, 4);
+            this.lblAdSoyad.Name = "lblAdSoyad";
+            this.lblAdSoyad.Size = new System.Drawing.Size(69, 17);
+            this.lblAdSoyad.TabIndex = 0;
+            this.lblAdSoyad.Text = "Ad Soyad";
+            // 
             // pictureProfil
             // 
             this.pictureProfil.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -125,22 +200,6 @@ namespace WinFormKOS
             this.pictureProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureProfil.TabIndex = 1;
             this.pictureProfil.TabStop = false;
-            // 
-            // dgOkuyucular
-            // 
-            this.dgOkuyucular.AllowUserToAddRows = false;
-            this.dgOkuyucular.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgOkuyucular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgOkuyucular.Location = new System.Drawing.Point(237, 35);
-            this.dgOkuyucular.MultiSelect = false;
-            this.dgOkuyucular.Name = "dgOkuyucular";
-            this.dgOkuyucular.ReadOnly = true;
-            this.dgOkuyucular.RowHeadersVisible = false;
-            this.dgOkuyucular.RowHeadersWidth = 51;
-            this.dgOkuyucular.RowTemplate.Height = 24;
-            this.dgOkuyucular.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgOkuyucular.Size = new System.Drawing.Size(986, 156);
-            this.dgOkuyucular.TabIndex = 2;
             // 
             // groupBox2
             // 
@@ -155,62 +214,39 @@ namespace WinFormKOS
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kitap Seç";
             // 
-            // txtFiltreleOkuyucu
+            // txtFiltreleKitap
             // 
-            this.txtFiltreleOkuyucu.Location = new System.Drawing.Point(1083, 194);
-            this.txtFiltreleOkuyucu.Name = "txtFiltreleOkuyucu";
-            this.txtFiltreleOkuyucu.Size = new System.Drawing.Size(140, 22);
-            this.txtFiltreleOkuyucu.TabIndex = 2;
-            this.txtFiltreleOkuyucu.TextChanged += new System.EventHandler(this.txtFiltreleOkuyucu_TextChanged);
+            this.txtFiltreleKitap.Location = new System.Drawing.Point(1083, 197);
+            this.txtFiltreleKitap.Name = "txtFiltreleKitap";
+            this.txtFiltreleKitap.Size = new System.Drawing.Size(140, 22);
+            this.txtFiltreleKitap.TabIndex = 5;
+            this.txtFiltreleKitap.TextChanged += new System.EventHandler(this.txtFiltreleKitap_TextChanged);
             // 
-            // label1
+            // label5
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1023, 199);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Filtrele:";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1023, 202);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 17);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Filtrele:";
             // 
-            // lblAdSoyad
+            // dgKitaplar
             // 
-            this.lblAdSoyad.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblAdSoyad.AutoSize = true;
-            this.lblAdSoyad.Location = new System.Drawing.Point(3, 4);
-            this.lblAdSoyad.Name = "lblAdSoyad";
-            this.lblAdSoyad.Size = new System.Drawing.Size(69, 17);
-            this.lblAdSoyad.TabIndex = 0;
-            this.lblAdSoyad.Text = "Ad Soyad";
-            // 
-            // lblSinif
-            // 
-            this.lblSinif.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblSinif.AutoSize = true;
-            this.lblSinif.Location = new System.Drawing.Point(3, 29);
-            this.lblSinif.Name = "lblSinif";
-            this.lblSinif.Size = new System.Drawing.Size(35, 17);
-            this.lblSinif.TabIndex = 1;
-            this.lblSinif.Text = "Sınıf";
-            // 
-            // lblOkulNo
-            // 
-            this.lblOkulNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblOkulNo.AutoSize = true;
-            this.lblOkulNo.Location = new System.Drawing.Point(3, 54);
-            this.lblOkulNo.Name = "lblOkulNo";
-            this.lblOkulNo.Size = new System.Drawing.Size(59, 17);
-            this.lblOkulNo.TabIndex = 2;
-            this.lblOkulNo.Text = "Okul No";
-            // 
-            // lblGecikmeBedeli
-            // 
-            this.lblGecikmeBedeli.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblGecikmeBedeli.AutoSize = true;
-            this.lblGecikmeBedeli.Location = new System.Drawing.Point(3, 79);
-            this.lblGecikmeBedeli.Name = "lblGecikmeBedeli";
-            this.lblGecikmeBedeli.Size = new System.Drawing.Size(106, 17);
-            this.lblGecikmeBedeli.TabIndex = 3;
-            this.lblGecikmeBedeli.Text = "Gecikme Bedeli";
+            this.dgKitaplar.AllowUserToAddRows = false;
+            this.dgKitaplar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgKitaplar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgKitaplar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgKitaplar.Location = new System.Drawing.Point(237, 35);
+            this.dgKitaplar.MultiSelect = false;
+            this.dgKitaplar.Name = "dgKitaplar";
+            this.dgKitaplar.ReadOnly = true;
+            this.dgKitaplar.RowHeadersVisible = false;
+            this.dgKitaplar.RowHeadersWidth = 51;
+            this.dgKitaplar.RowTemplate.Height = 24;
+            this.dgKitaplar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgKitaplar.Size = new System.Drawing.Size(986, 156);
+            this.dgKitaplar.TabIndex = 2;
             // 
             // tableLayoutPanel3
             // 
@@ -231,6 +267,36 @@ namespace WinFormKOS
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(215, 122);
             this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // lblYazarAdi
+            // 
+            this.lblYazarAdi.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblYazarAdi.AutoSize = true;
+            this.lblYazarAdi.Location = new System.Drawing.Point(83, 92);
+            this.lblYazarAdi.Name = "lblYazarAdi";
+            this.lblYazarAdi.Size = new System.Drawing.Size(20, 17);
+            this.lblYazarAdi.TabIndex = 5;
+            this.lblYazarAdi.Text = "...";
+            // 
+            // lblKitapAdi
+            // 
+            this.lblKitapAdi.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblKitapAdi.AutoSize = true;
+            this.lblKitapAdi.Location = new System.Drawing.Point(83, 51);
+            this.lblKitapAdi.Name = "lblKitapAdi";
+            this.lblKitapAdi.Size = new System.Drawing.Size(20, 17);
+            this.lblKitapAdi.TabIndex = 4;
+            this.lblKitapAdi.Text = "...";
+            // 
+            // lblKayitNo
+            // 
+            this.lblKayitNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblKayitNo.AutoSize = true;
+            this.lblKayitNo.Location = new System.Drawing.Point(83, 11);
+            this.lblKayitNo.Name = "lblKayitNo";
+            this.lblKayitNo.Size = new System.Drawing.Size(20, 17);
+            this.lblKayitNo.TabIndex = 3;
+            this.lblKayitNo.Text = "...";
             // 
             // label2
             // 
@@ -262,70 +328,6 @@ namespace WinFormKOS
             this.label4.TabIndex = 2;
             this.label4.Text = "Yazar Adı";
             // 
-            // lblKayitNo
-            // 
-            this.lblKayitNo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblKayitNo.AutoSize = true;
-            this.lblKayitNo.Location = new System.Drawing.Point(83, 11);
-            this.lblKayitNo.Name = "lblKayitNo";
-            this.lblKayitNo.Size = new System.Drawing.Size(20, 17);
-            this.lblKayitNo.TabIndex = 3;
-            this.lblKayitNo.Text = "...";
-            // 
-            // lblKitapAdi
-            // 
-            this.lblKitapAdi.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblKitapAdi.AutoSize = true;
-            this.lblKitapAdi.Location = new System.Drawing.Point(83, 51);
-            this.lblKitapAdi.Name = "lblKitapAdi";
-            this.lblKitapAdi.Size = new System.Drawing.Size(20, 17);
-            this.lblKitapAdi.TabIndex = 4;
-            this.lblKitapAdi.Text = "...";
-            // 
-            // lblYazarAdi
-            // 
-            this.lblYazarAdi.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblYazarAdi.AutoSize = true;
-            this.lblYazarAdi.Location = new System.Drawing.Point(83, 92);
-            this.lblYazarAdi.Name = "lblYazarAdi";
-            this.lblYazarAdi.Size = new System.Drawing.Size(20, 17);
-            this.lblYazarAdi.TabIndex = 5;
-            this.lblYazarAdi.Text = "...";
-            // 
-            // dgKitaplar
-            // 
-            this.dgKitaplar.AllowUserToAddRows = false;
-            this.dgKitaplar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgKitaplar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgKitaplar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgKitaplar.Location = new System.Drawing.Point(237, 35);
-            this.dgKitaplar.MultiSelect = false;
-            this.dgKitaplar.Name = "dgKitaplar";
-            this.dgKitaplar.ReadOnly = true;
-            this.dgKitaplar.RowHeadersVisible = false;
-            this.dgKitaplar.RowHeadersWidth = 51;
-            this.dgKitaplar.RowTemplate.Height = 24;
-            this.dgKitaplar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgKitaplar.Size = new System.Drawing.Size(986, 156);
-            this.dgKitaplar.TabIndex = 2;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1023, 202);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 17);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Filtrele:";
-            // 
-            // txtFiltreleKitap
-            // 
-            this.txtFiltreleKitap.Location = new System.Drawing.Point(1083, 197);
-            this.txtFiltreleKitap.Name = "txtFiltreleKitap";
-            this.txtFiltreleKitap.Size = new System.Drawing.Size(140, 22);
-            this.txtFiltreleKitap.TabIndex = 5;
-            this.txtFiltreleKitap.TextChanged += new System.EventHandler(this.txtFiltreleKitap_TextChanged);
-            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 3;
@@ -343,15 +345,15 @@ namespace WinFormKOS
             this.tableLayoutPanel4.Size = new System.Drawing.Size(326, 37);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
-            // btnEmanetEt
+            // btnDusumYap
             // 
-            this.btnEmanetEt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEmanetEt.Location = new System.Drawing.Point(3, 3);
-            this.btnEmanetEt.Name = "btnEmanetEt";
-            this.btnEmanetEt.Size = new System.Drawing.Size(102, 31);
-            this.btnEmanetEt.TabIndex = 0;
-            this.btnEmanetEt.Text = "Emanet Et";
-            this.btnEmanetEt.UseVisualStyleBackColor = true;
+            this.btnDusumYap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDusumYap.Location = new System.Drawing.Point(219, 3);
+            this.btnDusumYap.Name = "btnDusumYap";
+            this.btnDusumYap.Size = new System.Drawing.Size(104, 31);
+            this.btnDusumYap.TabIndex = 2;
+            this.btnDusumYap.Text = "Düşüm Yap";
+            this.btnDusumYap.UseVisualStyleBackColor = true;
             // 
             // btnSureUzat
             // 
@@ -363,15 +365,15 @@ namespace WinFormKOS
             this.btnSureUzat.Text = "Süre Uzat";
             this.btnSureUzat.UseVisualStyleBackColor = true;
             // 
-            // btnDusumYap
+            // btnEmanetEt
             // 
-            this.btnDusumYap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDusumYap.Location = new System.Drawing.Point(219, 3);
-            this.btnDusumYap.Name = "btnDusumYap";
-            this.btnDusumYap.Size = new System.Drawing.Size(104, 31);
-            this.btnDusumYap.TabIndex = 2;
-            this.btnDusumYap.Text = "Düşüm Yap";
-            this.btnDusumYap.UseVisualStyleBackColor = true;
+            this.btnEmanetEt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEmanetEt.Location = new System.Drawing.Point(3, 3);
+            this.btnEmanetEt.Name = "btnEmanetEt";
+            this.btnEmanetEt.Size = new System.Drawing.Size(102, 31);
+            this.btnEmanetEt.TabIndex = 0;
+            this.btnEmanetEt.Text = "Emanet Et";
+            this.btnEmanetEt.UseVisualStyleBackColor = true;
             // 
             // FormEmanet
             // 
@@ -387,16 +389,16 @@ namespace WinFormKOS
             this.Load += new System.EventHandler(this.FormEmanet_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgOkuyucular)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProfil)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgOkuyucular)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgKitaplar)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgKitaplar)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
