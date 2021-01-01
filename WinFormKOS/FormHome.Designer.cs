@@ -114,6 +114,7 @@ namespace WinFormKOS
             // 
             // btnCikis
             // 
+            this.btnCikis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCikis.Image = ((System.Drawing.Image)(resources.GetObject("btnCikis.Image")));
             this.btnCikis.Location = new System.Drawing.Point(1015, 24);
             this.btnCikis.Name = "btnCikis";
@@ -148,9 +149,11 @@ namespace WinFormKOS
             // dgEmanet
             // 
             this.dgEmanet.AllowUserToAddRows = false;
+            this.dgEmanet.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgEmanet.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgEmanet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgEmanet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgEmanet.Location = new System.Drawing.Point(3, 3);
             this.dgEmanet.MultiSelect = false;
             this.dgEmanet.Name = "dgEmanet";
