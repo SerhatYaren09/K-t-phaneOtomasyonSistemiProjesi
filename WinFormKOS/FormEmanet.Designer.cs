@@ -75,7 +75,7 @@ namespace WinFormKOS
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Location = new System.Drawing.Point(12, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1229, 209);
+            this.groupBox1.Size = new System.Drawing.Size(1229, 230);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Okuyucu Seç";
@@ -129,10 +129,9 @@ namespace WinFormKOS
             // dgOkuyucular
             // 
             this.dgOkuyucular.AllowUserToAddRows = false;
-            this.dgOkuyucular.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgOkuyucular.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgOkuyucular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgOkuyucular.Location = new System.Drawing.Point(237, 31);
+            this.dgOkuyucular.Location = new System.Drawing.Point(237, 35);
             this.dgOkuyucular.MultiSelect = false;
             this.dgOkuyucular.Name = "dgOkuyucular";
             this.dgOkuyucular.ReadOnly = true;
@@ -140,8 +139,8 @@ namespace WinFormKOS
             this.dgOkuyucular.RowHeadersWidth = 51;
             this.dgOkuyucular.RowTemplate.Height = 24;
             this.dgOkuyucular.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgOkuyucular.Size = new System.Drawing.Size(986, 135);
-            this.dgOkuyucular.TabIndex = 1;
+            this.dgOkuyucular.Size = new System.Drawing.Size(986, 156);
+            this.dgOkuyucular.TabIndex = 2;
             // 
             // groupBox2
             // 
@@ -158,7 +157,7 @@ namespace WinFormKOS
             // 
             // txtFiltreleOkuyucu
             // 
-            this.txtFiltreleOkuyucu.Location = new System.Drawing.Point(1083, 172);
+            this.txtFiltreleOkuyucu.Location = new System.Drawing.Point(1083, 194);
             this.txtFiltreleOkuyucu.Name = "txtFiltreleOkuyucu";
             this.txtFiltreleOkuyucu.Size = new System.Drawing.Size(140, 22);
             this.txtFiltreleOkuyucu.TabIndex = 2;
@@ -167,7 +166,7 @@ namespace WinFormKOS
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1023, 177);
+            this.label1.Location = new System.Drawing.Point(1023, 199);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 17);
             this.label1.TabIndex = 3;

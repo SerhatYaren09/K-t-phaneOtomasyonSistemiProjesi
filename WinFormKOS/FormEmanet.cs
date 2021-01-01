@@ -18,11 +18,31 @@ namespace WinFormKOS
         {
             InitializeComponent();
         }
-
+        int okuyucuId = 0;
+        int kitapId = 0;
         private void FormEmanet_Load(object sender, EventArgs e)
         {
             okuyucularLoad();
             kitaplarLoad();
+        }
+
+        void getOkuyucuProfil()
+        {
+            pictureProfil.ImageLocation = Helper.profilPath(0);
+            lblAdSoyad.Text = "";
+            lblSinif.Text = "";
+            lblOkulNo.Text = "";
+            lblGecikmeBedeli.Text = "";
+
+            foreach (DataRow row in IDataBase.DataToDataTable("Select * From okuyucular Where id = @id", new SqlParameter("@id", SqlDbType.Int){Value = okuyucuId }).Rows)
+
+            {
+                pictureProfil.ImageLocation = Helper.profilPath(okuyucuId);
+                lblAdSoyad.Text = row["adi"].ToString() + "" + row["soyadi"].ToString();
+                lblSinif.Text = row["sinifi"].ToString();
+                lblOkulNo.Text = row["okulNo"].ToString();
+                lblGecikmeBedeli.Text = "YOK";
+            }
         }
         void okuyucularLoad()
         {
