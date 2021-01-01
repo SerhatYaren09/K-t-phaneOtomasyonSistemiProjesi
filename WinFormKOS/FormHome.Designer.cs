@@ -147,12 +147,18 @@ namespace WinFormKOS
             // 
             // dgEmanet
             // 
+            this.dgEmanet.AllowUserToAddRows = false;
+            this.dgEmanet.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgEmanet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgEmanet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgEmanet.Location = new System.Drawing.Point(3, 3);
+            this.dgEmanet.MultiSelect = false;
             this.dgEmanet.Name = "dgEmanet";
+            this.dgEmanet.ReadOnly = true;
+            this.dgEmanet.RowHeadersVisible = false;
             this.dgEmanet.RowHeadersWidth = 51;
             this.dgEmanet.RowTemplate.Height = 24;
+            this.dgEmanet.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgEmanet.Size = new System.Drawing.Size(1113, 253);
             this.dgEmanet.TabIndex = 0;
             // 
@@ -169,12 +175,18 @@ namespace WinFormKOS
             // 
             // dgMevcutKitaplar
             // 
+            this.dgMevcutKitaplar.AllowUserToAddRows = false;
+            this.dgMevcutKitaplar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgMevcutKitaplar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMevcutKitaplar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgMevcutKitaplar.Location = new System.Drawing.Point(3, 3);
+            this.dgMevcutKitaplar.MultiSelect = false;
             this.dgMevcutKitaplar.Name = "dgMevcutKitaplar";
+            this.dgMevcutKitaplar.ReadOnly = true;
+            this.dgMevcutKitaplar.RowHeadersVisible = false;
             this.dgMevcutKitaplar.RowHeadersWidth = 51;
             this.dgMevcutKitaplar.RowTemplate.Height = 24;
+            this.dgMevcutKitaplar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgMevcutKitaplar.Size = new System.Drawing.Size(1113, 253);
             this.dgMevcutKitaplar.TabIndex = 0;
             // 
@@ -191,12 +203,18 @@ namespace WinFormKOS
             // 
             // dgOkuyucular
             // 
+            this.dgOkuyucular.AllowUserToAddRows = false;
+            this.dgOkuyucular.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgOkuyucular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgOkuyucular.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgOkuyucular.Location = new System.Drawing.Point(3, 3);
+            this.dgOkuyucular.MultiSelect = false;
             this.dgOkuyucular.Name = "dgOkuyucular";
+            this.dgOkuyucular.ReadOnly = true;
+            this.dgOkuyucular.RowHeadersVisible = false;
             this.dgOkuyucular.RowHeadersWidth = 51;
             this.dgOkuyucular.RowTemplate.Height = 24;
+            this.dgOkuyucular.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgOkuyucular.Size = new System.Drawing.Size(1113, 253);
             this.dgOkuyucular.TabIndex = 0;
             // 
@@ -215,6 +233,7 @@ namespace WinFormKOS
             this.Name = "FormHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menüler";
+            this.Activated += new System.EventHandler(this.FormHome_Activated);
             this.Load += new System.EventHandler(this.FormHome_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

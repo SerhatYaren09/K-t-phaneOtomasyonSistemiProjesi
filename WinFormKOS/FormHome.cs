@@ -26,6 +26,7 @@ namespace WinFormKOS
         }
         private void FormHome_Load(object sender, EventArgs e)
         {
+            
            // MessageBox.Show(UserInfo.userId.ToString());
         }
 
@@ -57,6 +58,11 @@ namespace WinFormKOS
         {
             FormIstatistik formIstatistik = new FormIstatistik();
             formIstatistik.Show();
+        }
+
+        private void FormHome_Activated(object sender, EventArgs e)
+        {
+            dataGridViewLoad();
         }
     }
 }
