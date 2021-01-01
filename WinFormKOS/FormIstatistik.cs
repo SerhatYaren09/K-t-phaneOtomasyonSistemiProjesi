@@ -46,7 +46,13 @@ namespace WinFormKOS
                     query = "Select adi+' '+soyadi, COUNT(*) From emanetler Inner Join okuyucular On okuyucular.id = emanetler.okuyucuId Where okuyucular.aktif = 1 AND emanetler.aktif = 1 Group By adi+' '+soyadi";
                 break;
 
-               default:
+                case 1:
+                    query = "Select kitapAdi, COUNT(*) From emanetler Inner Join kitaplar On kitaplar.id = emanetler.kitapId Group By kitapAdi";
+                    break;
+
+
+
+                default:
                     break;
             }
         }
