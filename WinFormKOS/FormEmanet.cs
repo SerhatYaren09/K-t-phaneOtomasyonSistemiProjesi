@@ -60,14 +60,16 @@ namespace WinFormKOS
         }
         void okuyucularLoad()
         {
-            dgOkuyucular.DataSource = IDataBase.DataToDataTable("Select * From okuyucular Where aktif = 1 and adi+' '+soyadi Like @search", new SqlParameter("@search", SqlDbType.VarChar) { Value = string.Format("%{0}%", txtFiltreleOkuyucu.Text) });
+            dgOkuyucular.DataSource = IDataBase.DataToDataTable("Select * From okuyucular Where adi+' '+soyadi Like @search", new SqlParameter("@search", SqlDbType.VarChar) { Value = string.Format("%{0}%", txtFiltreleOkuyucu.Text) });
             dgOkuyucular.Columns["id"].Visible = false;
             dgOkuyucular.Columns["aktif"].Visible = false;
 
         }
         void kitaplarLoad()
         {
-            dgKitaplar.DataSource = IDataBase.DataToDataTable("Select * From kitaplar Where aktif = 1 and kitapAdi Like @search", new SqlParameter("@search", SqlDbType.VarChar) { Value = string.Format("%{0}%", txtFiltreleKitap.Text) });
+            dgKitaplar.DataSource = IDataBase.DataToDataTable("Select * From kitaplar Where kitapAdi Like @search", new SqlParameter("@search", SqlDbType.VarChar) { Value = string.Format("%{0}%", txtFiltreleKitap.Text) });
+            dgKitaplar.Columns["id"].Visible = false;
+            dgKitaplar.Columns["aktif"].Visible = false;
         }
         private void txtFiltreleOkuyucu_TextChanged(object sender, EventArgs e)
         {
