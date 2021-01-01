@@ -42,6 +42,20 @@ namespace WinFormKOS
                 lblSinif.Text = row["sinifi"].ToString();
                 lblOkulNo.Text = row["okulNo"].ToString();
                 lblGecikmeBedeli.Text = "YOK";
+
+                int cezaTL = getGecikmeBedeli();
+                if(cezaTL > 0)
+                {
+                    lblGecikmeBedeli.Text = string.Format("{0:3}", cezaTL);
+                    lblGecikmeBedeli.BackColor = Color.Red;
+                }
+                else
+                {
+                    lblGecikmeBedeli.Text = "Uygun";
+                    lblGecikmeBedeli.BackColor = Color.Transparent;
+                }
+
+
             }
         }
 
@@ -94,7 +108,7 @@ namespace WinFormKOS
                                       " Insert Into emanetler (kitapId , okuyucuId, emanetVerilisTarihi , emanetGeriAlmaTarihi) Values (@kitapId , @okuyucuId , @emanetVerilisTarihi , @emanetGeriAlmaTarihi)", parameters);
         }
 
-        int GecikmeBedeli()
+        int getGecikmeBedeli()
         {
             int cezaTL = 100;
             int gunFark = 0;
