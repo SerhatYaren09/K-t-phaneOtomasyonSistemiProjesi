@@ -53,7 +53,7 @@ namespace WinFormKOS
 
             foreach (DataRow row in IDataBase.DataToDataTable("Select * From kitaplar Where id = @id", new SqlParameter("@id", SqlDbType.Int) { Value = kitapId }).Rows)
             {
-                lblKayitNo.Text = row["kitapNo"].ToString();
+                lblKayitNo.Text = row["kayitNo"].ToString();
                 lblKitapAdi.Text = row["kitapAdi"].ToString();
                 lblYazarAdi.Text = row["yazarAdi"].ToString();
             }
