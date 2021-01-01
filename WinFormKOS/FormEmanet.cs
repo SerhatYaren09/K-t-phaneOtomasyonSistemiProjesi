@@ -135,7 +135,7 @@ namespace WinFormKOS
 
             IDataBase.executeNonQuery("Update emanetler Set emanetVerilisTarihi = @emanetVerilisTarihi, emanetGeriAlmaTarihi = @emanetGeriAlmaTarihi Where kitapId = @kitapId", parameters);
 
-            okuyucularLoad();
+            getOkuyucuProfil();
             kitaplarLoad();
         }
 
@@ -197,6 +197,16 @@ namespace WinFormKOS
         {
             if(e.RowIndex > -1)
             {
+                if(okuyucuId > 0)
+                {
+                    MessageBox.Show("Okuyucu seçiniz");
+                    return;
+                }
+                if(getEmanetId() > 0)
+                {
+                    MessageBox.Show("Okuyucunun emaneti var");
+                    return;
+                }
                 kitapId = Convert.ToInt32(dgKitaplar.Rows[e.RowIndex].Cells["id"].Value);
                 getKitapProfil();
             }
