@@ -157,7 +157,7 @@ namespace WinFormKOS
             parameters.Add(new SqlParameter("@emanetIslemTarihi", SqlDbType.Date) { Value = DateTime.Now });
        
             IDataBase.executeNonQuery("Update kitaplar Set durum = 1 Where id = @kitapId " +
-                                      "Update emanetler Set emanetIslemTarihi = @emanetIslemTarihi Where kitapId = @kitapId", parameters);
+                                      "Update emanetler Set emanetIslemTarihi = @emanetIslemTarihi, durum = 1 Where kitapId = @kitapId", parameters);
 
             getOkuyucuProfil();
             kitaplarLoad();
