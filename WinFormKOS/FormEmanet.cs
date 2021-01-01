@@ -90,7 +90,7 @@ namespace WinFormKOS
             parameters.Add(new SqlParameter("@emanetVerilisTarihi", SqlDbType.Date) { Value = DateTime.Now });
             parameters.Add(new SqlParameter("@emanetGeriAlmaTarihi", SqlDbType.Date) { Value = DateTime.Now.AddDays(30) });
 
-            IDataBase.executeNonQuery("Update kitaplar Set durum = 0 Where id = @kitapid", parameters);
+            IDataBase.executeNonQuery("Update kitaplar Set durum = 0 Where id = @kitapid" + "Insert Into emanetler (kitapId , okuyucuId, emanetVerilisTarihi , emanetGeriAlmaTarihi) Values (@kitapId , @okuyucuId , @emanetVerilisTarihi , @emanetGeriAlmaTarihi) ", parameters);
         }
         int getEmanetId()
         {
