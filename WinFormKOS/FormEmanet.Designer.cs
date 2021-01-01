@@ -356,6 +356,7 @@ namespace WinFormKOS
             this.btnDusumYap.TabIndex = 2;
             this.btnDusumYap.Text = "Düşüm Yap";
             this.btnDusumYap.UseVisualStyleBackColor = true;
+            this.btnDusumYap.Click += new System.EventHandler(this.btnDusumYap_Click);
             // 
             // btnSureUzat
             // 

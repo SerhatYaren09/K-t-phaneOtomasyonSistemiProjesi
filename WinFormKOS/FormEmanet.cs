@@ -139,6 +139,30 @@ namespace WinFormKOS
             kitaplarLoad();
         }
 
+        void dusumYap()
+        {
+            if (kitapId == 0 || okuyucuId == 0)
+            {
+                MessageBox.Show("Kitap veya okuyucu seçmediniz");
+                return;
+            }
+            if (getEmanetId() == 0)
+            {
+                MessageBox.Show("Seçili okuyucunun emaneti yok");
+                return;
+            }
+
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@kitapId", SqlDbType.Int) { Value = kitapId });
+            parameters.Add(new SqlParameter("@emanetIslemTarihi", SqlDbType.Date) { Value = DateTime.Now });
+       
+            IDataBase.executeNonQuery("Update kitaplar Set durum = 1 Where id = @kitapId " +
+                                      "Update emanetler Set emanetIslemTarihi = @emanetIslemTarihi Where kitapId = @kitapId", parameters);
+
+            getOkuyucuProfil();
+            kitaplarLoad();
+        }
+
         int getGecikmeBedeli()
         {
             int cezaTL = 100;
@@ -197,6 +221,7 @@ namespace WinFormKOS
         {
             if(e.RowIndex > -1)
             {
+             
                 if(okuyucuId == 0)
                 {
                     MessageBox.Show("Okuyucu seçiniz");
@@ -231,6 +256,11 @@ namespace WinFormKOS
             {
                 sureUzat();
            }
+        }
+
+        private void btnDusumYap_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
