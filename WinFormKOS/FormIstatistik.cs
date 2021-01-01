@@ -43,19 +43,19 @@ namespace WinFormKOS
             {
 
                 case 0:
-                    query = "Select adi+' '+soyadi, COUNT(*) From emanetler Inner Join okuyucular On okuyucular.id = emanetler.okuyucuId Where okuyucular.aktif = 1 AND emanetler.aktif = 1 Group By adi+' '+soyadi";
+                    query = "Select adi+' '+soyadi AS X, COUNT(*) AS Y From emanetler Inner Join okuyucular On okuyucular.id = emanetler.okuyucuId Where okuyucular.aktif = 1 AND emanetler.aktif = 1 Group By adi+' '+soyadi";
                 break;
 
                 case 1:
-                    query = "Select kitapAdi, COUNT(*) From emanetler Inner Join kitaplar On kitaplar.id = emanetler.kitapId Group By kitapAdi";
+                    query = "Select kitapAdi AS X, COUNT(*) AS Y From emanetler Inner Join kitaplar On kitaplar.id = emanetler.kitapId Group By kitapAdi";
                     break;
 
                 case 2:
-                    query = "Select yazarAdi, COUNT(*) From emanetler Inner Join kitaplar On kitaplar.id = emanetler.kitapId Group By yazarAdi";
+                    query = "Select yazarAdi AS X, COUNT(*) AS Y From emanetler Inner Join kitaplar On kitaplar.id = emanetler.kitapId Group By yazarAdi";
                     break;
 
                 case 3:
-                    query = "Select tur, COUNT(*) From emanetler Inner Join kitaplar On kitaplar.id = emanetler.kitapId Group By tur";
+                    query = "Select tur AS X, COUNT(*) AS Y From emanetler Inner Join kitaplar On kitaplar.id = emanetler.kitapId Group By tur";
                     break;
 
 
