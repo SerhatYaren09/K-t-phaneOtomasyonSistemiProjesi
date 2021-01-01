@@ -71,7 +71,15 @@ namespace WinFormKOS
             dgKitaplar.Columns["id"].Visible = false;
             dgKitaplar.Columns["aktif"].Visible = false;
         }
+        void emanetEt()
+        { 
+             if(getEmanetId() > 0)
+            {
+                MessageBox.Show("Seçili okuyucunun emaneti var");
+                return;
+            }
 
+        }
         int getEmanetId()
         {
             foreach (DataRow row in IDataBase.DataToDataTable("Select * From emanetler Where okuyucuId = @id AND durum = 0 AND aktif = 1", new SqlParameter("@id", SqlDbType.Int) { Value = okuyucuId }).Rows)
