@@ -20,6 +20,7 @@ namespace WinFormKOS
         }
         int okuyucuId = 0;
         int kitapId = 0;
+        string gecikmeBedeli = "";
         private void FormEmanet_Load(object sender, EventArgs e)
         {
             okuyucularLoad();
@@ -33,6 +34,7 @@ namespace WinFormKOS
             lblSinif.Text = "";
             lblOkulNo.Text = "";
             lblGecikmeBedeli.Text = "";
+            gecikmeBedeli = "";
 
             foreach (DataRow row in IDataBase.DataToDataTable("Select * From okuyucular Where id = @id", new SqlParameter("@id", SqlDbType.Int){Value = okuyucuId }).Rows)
 
@@ -44,7 +46,8 @@ namespace WinFormKOS
                 lblGecikmeBedeli.Text = "YOK";
 
                 int cezaTL = getGecikmeBedeli();
-                if(cezaTL > 0)
+                gecikmeBedeli = string.Format("{0:C}", cezaTL);
+                if (cezaTL > 0)
                 {
                     lblGecikmeBedeli.Text = "Ceza " +string.Format("{0:C}", cezaTL);
                     lblGecikmeBedeli.BackColor = Color.Red;
@@ -110,6 +113,29 @@ namespace WinFormKOS
 
             kitaplarLoad();
         
+        }
+
+        void sureUzat()
+        {
+            if (kitapId == 0 || okuyucuId == 0)
+            {
+                MessageBox.Show("Kitap veya okuyucu seçmediniz");
+                return;
+            }
+            if (getEmanetId() == 0)
+            {
+                MessageBox.Show("Seçili okuyucunun emaneti yok");
+                return;
+            }
+
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@kitapId", SqlDbType.Int) { Value = kitapId });
+            parameters.Add(new SqlParameter("@emanetVerilisTarihi", SqlDbType.Date) { Value = DateTime.Now });
+            parameters.Add(new SqlParameter("@emanetGeriAlmaTarihi", SqlDbType.Date) { Value = DateTime.Now.AddDays(30) });
+
+            IDataBase.executeNonQuery("Update emanetler Set emanetVerilisTarihi = @emanetVerilisTarihi, emanetGeriAlmaTarihi = @emanetGeriAlmaTarihi Where kitapId = @kitapId", parameters);
+
+            kitaplarLoad();
         }
 
         int getGecikmeBedeli()
@@ -178,6 +204,11 @@ namespace WinFormKOS
         private void btnEmanetEt_Click(object sender, EventArgs e)
         {
             emanetEt();
+        }
+
+        private void btnSureUzat_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

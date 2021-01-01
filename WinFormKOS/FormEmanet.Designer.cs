@@ -366,6 +366,7 @@ namespace WinFormKOS
             this.btnSureUzat.TabIndex = 1;
             this.btnSureUzat.Text = "Süre Uzat";
             this.btnSureUzat.UseVisualStyleBackColor = true;
+            this.btnSureUzat.Click += new System.EventHandler(this.btnSureUzat_Click);
             // 
             // btnEmanetEt
             // 
