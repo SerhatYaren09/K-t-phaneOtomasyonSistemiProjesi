@@ -135,6 +135,7 @@ namespace WinFormKOS
 
             IDataBase.executeNonQuery("Update emanetler Set emanetVerilisTarihi = @emanetVerilisTarihi, emanetGeriAlmaTarihi = @emanetGeriAlmaTarihi Where kitapId = @kitapId", parameters);
 
+            okuyucularLoad();
             kitaplarLoad();
         }
 
@@ -210,7 +211,7 @@ namespace WinFormKOS
         {
             if (!string.IsNullOrEmpty(gecikmeBedeli))
             {
-                DialogResult dialogResult = MessageBox.Show("Okuyucunun " + gecikmeBedeli + "var. Gecikme Bedeli teslim alındı mı?", "Gecikme Bedeli");
+                DialogResult dialogResult = MessageBox.Show("Okuyucunun " + gecikmeBedeli + " gecikme bedeli teslim alındı mı?", "Gecikme Bedeli",MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     sureUzat();
