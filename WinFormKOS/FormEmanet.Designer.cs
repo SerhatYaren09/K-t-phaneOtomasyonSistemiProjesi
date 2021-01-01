@@ -248,6 +248,7 @@ namespace WinFormKOS
             this.dgKitaplar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgKitaplar.Size = new System.Drawing.Size(986, 156);
             this.dgKitaplar.TabIndex = 2;
+            this.dgKitaplar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgKitaplar_CellClick);
             // 
             // tableLayoutPanel3
             // 

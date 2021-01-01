@@ -93,5 +93,14 @@ namespace WinFormKOS
 
             }
         }
+
+        private void dgKitaplar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex > -1)
+            {
+                kitapId = Convert.ToInt32(dgKitaplar.Rows[e.RowIndex].Cells["id"].Value);
+                getKitapProfil();
+            }
+        }
     }
 }
