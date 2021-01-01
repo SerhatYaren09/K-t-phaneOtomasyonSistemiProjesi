@@ -82,7 +82,7 @@ namespace WinFormKOS
         }
         void kitaplarLoad()
         {
-            dgKitaplar.DataSource = IDataBase.DataToDataTable("Select * From kitaplar Where kitapAdi Like @search", new SqlParameter("@search", SqlDbType.VarChar) { Value = string.Format("%{0}%", txtFiltreleKitap.Text) });
+            dgKitaplar.DataSource = IDataBase.DataToDataTable("Select * From kitaplar Where kitapAdi AND durum = 1 Like @search", new SqlParameter("@search", SqlDbType.VarChar) { Value = string.Format("%{0}%", txtFiltreleKitap.Text) });
             dgKitaplar.Columns["id"].Visible = false;
             dgKitaplar.Columns["aktif"].Visible = false;
         }
@@ -107,6 +107,9 @@ namespace WinFormKOS
 
             IDataBase.executeNonQuery("Update kitaplar Set durum = 0 Where id = @kitapId" + 
                                       " Insert Into emanetler (kitapId , okuyucuId, emanetVerilisTarihi , emanetGeriAlmaTarihi) Values (@kitapId , @okuyucuId , @emanetVerilisTarihi , @emanetGeriAlmaTarihi)", parameters);
+
+            kitaplarLoad();
+        
         }
 
         int getGecikmeBedeli()
