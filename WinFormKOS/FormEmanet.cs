@@ -20,7 +20,7 @@ namespace WinFormKOS
         }
         int okuyucuId = 0;
         int kitapId = 0;
-        string gecikmeBedeli = "";
+        int cezaTL = 0;
         private void FormEmanet_Load(object sender, EventArgs e)
         {
             okuyucularLoad();
@@ -34,7 +34,7 @@ namespace WinFormKOS
             lblSinif.Text = "";
             lblOkulNo.Text = "";
             lblGecikmeBedeli.Text = "";
-            gecikmeBedeli = "";
+            cezaTL = 0;
 
             foreach (DataRow row in IDataBase.DataToDataTable("Select * From okuyucular Where id = @id", new SqlParameter("@id", SqlDbType.Int){Value = okuyucuId }).Rows)
 
@@ -45,11 +45,11 @@ namespace WinFormKOS
                 lblOkulNo.Text = row["okulNo"].ToString();
                 lblGecikmeBedeli.Text = "YOK";
 
-                int cezaTL = getGecikmeBedeli();
-                gecikmeBedeli = string.Format("{0:C}", cezaTL);
+                cezaTL = getGecikmeBedeli();
+               
                 if (cezaTL > 0)
                 {
-                    lblGecikmeBedeli.Text = "Ceza " + gecikmeBedeli;
+                    lblGecikmeBedeli.Text = "Ceza " +string.Format("{0:C}", cezaTL);
                     lblGecikmeBedeli.BackColor = Color.Red;
                 }
                 else
@@ -244,9 +244,9 @@ namespace WinFormKOS
 
         private void btnSureUzat_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(gecikmeBedeli))
+            if (cezaTL > 0)
             {
-                DialogResult dialogResult = MessageBox.Show("Okuyucunun " + gecikmeBedeli + " gecikme bedeli teslim alındı mı?", "Gecikme Bedeli",MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Okuyucunun " + string.Format("{0:C}", cezaTL) + " gecikme bedeli teslim alındı mı?", "Gecikme Bedeli",MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     sureUzat();
@@ -260,9 +260,9 @@ namespace WinFormKOS
 
         private void btnDusumYap_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(gecikmeBedeli))
+            if (cezaTL > 0)
             {
-                DialogResult dialogResult = MessageBox.Show("Okuyucunun " + gecikmeBedeli + " gecikme bedeli teslim alındı mı?", "Gecikme Bedeli", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Okuyucunun " + string.Format("{0:C}", cezaTL) + " gecikme bedeli teslim alındı mı?", "Gecikme Bedeli", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     dusumYap();
