@@ -46,5 +46,10 @@ namespace WinFormKOS
             FormEmanet formEmanet = new FormEmanet();
             formEmanet.Show();
         }
+
+        private void btnIstatistik_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

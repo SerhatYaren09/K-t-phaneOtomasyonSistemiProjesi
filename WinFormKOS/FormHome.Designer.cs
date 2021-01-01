@@ -98,6 +98,7 @@ namespace WinFormKOS
             this.btnIstatistik.Text = "İstatistik";
             this.btnIstatistik.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnIstatistik.UseVisualStyleBackColor = true;
+            this.btnIstatistik.Click += new System.EventHandler(this.btnIstatistik_Click);
             // 
             // btnAyarlar
             // 
