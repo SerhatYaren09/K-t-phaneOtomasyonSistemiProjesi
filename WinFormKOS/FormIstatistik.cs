@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormKOS.Model;
 
 namespace WinFormKOS
 {
@@ -62,6 +63,19 @@ namespace WinFormKOS
                 default:
                     break;
             }
+
+            foreach (var series in chart.Series)
+            {
+                series.Points.Clear();
+            }
+
+            foreach (DataRow row in IDataBase.DataToDataTable(query).Rows)
+            {
+                chart.Series["Durum"].Points.AddXY(row["X"].ToString(), row["Y"].ToString());
+            }
+
+
+
         }
 
     }

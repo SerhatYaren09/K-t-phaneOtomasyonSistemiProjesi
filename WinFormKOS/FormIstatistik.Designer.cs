@@ -34,8 +34,8 @@ namespace WinFormKOS
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.cbbIstatistik = new System.Windows.Forms.ComboBox();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -60,36 +60,36 @@ namespace WinFormKOS
             this.cbbIstatistik.Size = new System.Drawing.Size(121, 24);
             this.cbbIstatistik.TabIndex = 1;
             // 
-            // chart1
+            // chart
             // 
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(16, 62);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            this.chart.Legends.Add(legend1);
+            this.chart.Location = new System.Drawing.Point(16, 62);
+            this.chart.Name = "chart";
+            this.chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Durum";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(1360, 451);
-            this.chart1.TabIndex = 2;
-            this.chart1.Text = "chart1";
+            this.chart.Series.Add(series1);
+            this.chart.Size = new System.Drawing.Size(1360, 451);
+            this.chart.TabIndex = 2;
+            this.chart.Text = "chart1";
             // 
             // FormIstatistik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1402, 555);
-            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.chart);
             this.Controls.Add(this.cbbIstatistik);
             this.Controls.Add(this.label1);
             this.Name = "FormIstatistik";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormIstatistik";
             this.Load += new System.EventHandler(this.FormIstatistik_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,6 +99,6 @@ namespace WinFormKOS
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbbIstatistik;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart;
     }
 }
