@@ -71,6 +71,16 @@ namespace WinFormKOS
             dgKitaplar.Columns["id"].Visible = false;
             dgKitaplar.Columns["aktif"].Visible = false;
         }
+
+        int getEmanetId()
+        {
+            foreach (DataRow row in IDataBase.DataToDataTable("Select * From emanetler Where okuyucuId = @id AND durum = 0 AND aktif = 1", new SqlParameter("@id", SqlDbType.Int) { Value = okuyucuId }).Rows)
+            {
+                return Convert.ToInt32(row["kitapId"]);
+            }
+            return 0;
+        }
+
         private void txtFiltreleOkuyucu_TextChanged(object sender, EventArgs e)
         {
             okuyucularLoad();

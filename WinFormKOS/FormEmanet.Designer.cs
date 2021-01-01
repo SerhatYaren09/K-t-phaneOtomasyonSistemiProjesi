@@ -306,9 +306,9 @@ namespace WinFormKOS
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 17);
+            this.label2.Size = new System.Drawing.Size(65, 17);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Kayıt No";
+            this.label2.Text = "Kayıt No:";
             // 
             // label3
             // 
@@ -316,9 +316,9 @@ namespace WinFormKOS
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 51);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 17);
+            this.label3.Size = new System.Drawing.Size(68, 17);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Kitap Adı";
+            this.label3.Text = "Kitap Adı:";
             // 
             // label4
             // 
@@ -326,9 +326,9 @@ namespace WinFormKOS
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(3, 92);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 17);
+            this.label4.Size = new System.Drawing.Size(73, 17);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Yazar Adı";
+            this.label4.Text = "Yazar Adı:";
             // 
             // tableLayoutPanel4
             // 
