@@ -44,6 +44,20 @@ namespace WinFormKOS
                 lblGecikmeBedeli.Text = "YOK";
             }
         }
+
+        void getKitapProfil()
+        {
+            lblKayitNo.Text = "";
+            lblKitapAdi.Text = "";
+            lblYazarAdi.Text = "";
+
+            foreach (DataRow row in IDataBase.DataToDataTable("Select * From kitaplar Where id = @id", new SqlParameter("@id", SqlDbType.Int) { Value = kitapId }).Rows)
+            {
+                lblKayitNo.Text = row["kitapNo"].ToString();
+                lblKitapAdi.Text = row["kitapAdi"].ToString();
+                lblYazarAdi.Text = row["yazarAdi"].ToString();
+            }
+        }
         void okuyucularLoad()
         {
             dgOkuyucular.DataSource = IDataBase.DataToDataTable("Select * From okuyucular Where aktif = 1 and adi+' '+soyadi Like @search", new SqlParameter("@search", SqlDbType.VarChar) { Value = string.Format("%{0}%", txtFiltreleOkuyucu.Text) });
