@@ -93,6 +93,27 @@ namespace WinFormKOS
             IDataBase.executeNonQuery("Update kitaplar Set durum = 0 Where id = @kitapId" + 
                                       " Insert Into emanetler (kitapId , okuyucuId, emanetVerilisTarihi , emanetGeriAlmaTarihi) Values (@kitapId , @okuyucuId , @emanetVerilisTarihi , @emanetGeriAlmaTarihi)", parameters);
         }
+
+        int GecikmeBedeli()
+        {
+            int cezaTL = 100;
+            int gunFark = 0;
+            foreach (DataRow row in IDataBase.DataToDataTable("Select * From emanetler Where okuyucuId = @id AND durum = 0 AND aktif = 1", new SqlParameter("@id", SqlDbType.Int) { Value = okuyucuId }).Rows)
+            {
+                TimeSpan timeSpan = DateTime.Now - Convert.ToDateTime(row["emanetGeriAlmaTarihi"]);
+                gunFark = timeSpan.Days;
+            }
+            if(gunFark > 0)
+            {
+                return (gunFark * cezaTL);
+            }
+
+
+            return 0;
+        }
+
+
+
         int getEmanetId()
         {
             foreach (DataRow row in IDataBase.DataToDataTable("Select * From emanetler Where okuyucuId = @id AND durum = 0 AND aktif = 1", new SqlParameter("@id", SqlDbType.Int) { Value = okuyucuId }).Rows)
