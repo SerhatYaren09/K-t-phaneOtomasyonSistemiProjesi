@@ -265,12 +265,12 @@ namespace WinFormKOS
                 DialogResult dialogResult = MessageBox.Show("Okuyucunun " + gecikmeBedeli + " gecikme bedeli teslim alındı mı?", "Gecikme Bedeli", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    sureUzat();
+                    dusumYap();
                 }
             }
             else
             {
-                sureUzat();
+                dusumYap();
             }
 
         }
