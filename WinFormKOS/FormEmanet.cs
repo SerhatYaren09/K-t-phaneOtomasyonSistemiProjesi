@@ -260,6 +260,18 @@ namespace WinFormKOS
 
         private void btnDusumYap_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(gecikmeBedeli))
+            {
+                DialogResult dialogResult = MessageBox.Show("Okuyucunun " + gecikmeBedeli + " gecikme bedeli teslim alındı mı?", "Gecikme Bedeli", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    sureUzat();
+                }
+            }
+            else
+            {
+                sureUzat();
+            }
 
         }
     }
