@@ -90,7 +90,8 @@ namespace WinFormKOS
             parameters.Add(new SqlParameter("@emanetVerilisTarihi", SqlDbType.Date) { Value = DateTime.Now });
             parameters.Add(new SqlParameter("@emanetGeriAlmaTarihi", SqlDbType.Date) { Value = DateTime.Now.AddDays(30) });
 
-            IDataBase.executeNonQuery("Update kitaplar Set durum = 0 Where id = @kitapid" + "Insert Into emanetler (kitapId , okuyucuId, emanetVerilisTarihi , emanetGeriAlmaTarihi) Values (@kitapId , @okuyucuId , @emanetVerilisTarihi , @emanetGeriAlmaTarihi) ", parameters);
+            IDataBase.executeNonQuery("Update kitaplar Set durum = 0 Where id = @kitapId" + 
+                                      " Insert Into emanetler (kitapId , okuyucuId, emanetVerilisTarihi , emanetGeriAlmaTarihi) Values (@kitapId , @okuyucuId , @emanetVerilisTarihi , @emanetGeriAlmaTarihi)", parameters);
         }
         int getEmanetId()
         {
@@ -133,6 +134,11 @@ namespace WinFormKOS
                 kitapId = Convert.ToInt32(dgKitaplar.Rows[e.RowIndex].Cells["id"].Value);
                 getKitapProfil();
             }
+        }
+
+        private void btnEmanetEt_Click(object sender, EventArgs e)
+        {
+            emanetEt();
         }
     }
 }

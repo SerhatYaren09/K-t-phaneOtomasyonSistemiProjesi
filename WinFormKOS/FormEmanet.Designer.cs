@@ -376,6 +376,7 @@ namespace WinFormKOS
             this.btnEmanetEt.TabIndex = 0;
             this.btnEmanetEt.Text = "Emanet Et";
             this.btnEmanetEt.UseVisualStyleBackColor = true;
+            this.btnEmanetEt.Click += new System.EventHandler(this.btnEmanetEt_Click);
             // 
             // FormEmanet
             // 
