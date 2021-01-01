@@ -21,7 +21,7 @@ namespace WinFormKOS
         void dataGridViewLoad()
         {
             dgEmanet.DataSource = IDataBase.DataToDataTable("Select kayitNo AS [Kayıt No], kitapAdi AS [Kitap Adı], yazarAdi AS [Yazar Adı], yayinevi AS [Yayınevi], basimYili AS [Basım Yılı], sayfaSayisi AS [Sayfa Sayısı], tur AS [tür], aciklama AS [Açıklama], dolap AS [dolap], raf AS [raf], sira AS [sıra], aktif AS [aktif], durum AS [durum] From kitaplar Where aktif = 1 and durum = 0");
-            dgMevcutKitaplar.DataSource = IDataBase.DataToDataTable("Select Select kayitNo AS [Kayıt No], kitapAdi AS [Kitap Adı], yazarAdi AS [Yazar Adı], yayinevi AS [Yayınevi], basimYili AS [Basım Yılı], sayfaSayisi AS [Sayfa Sayısı], tur AS [tür], aciklama AS [Açıklama], dolap AS [dolap], raf AS [raf], sira AS [sıra], aktif AS [aktif], durum AS [durum] From kitaplar Where aktif = 1 and durum = 1");
+            dgMevcutKitaplar.DataSource = IDataBase.DataToDataTable("Select kayitNo AS [Kayıt No], kitapAdi AS [Kitap Adı], yazarAdi AS [Yazar Adı], yayinevi AS [Yayınevi], basimYili AS [Basım Yılı], sayfaSayisi AS [Sayfa Sayısı], tur AS [tür], aciklama AS [Açıklama], dolap AS [dolap], raf AS [raf], sira AS [sıra], aktif AS [aktif], durum AS [durum] From kitaplar Where aktif = 1 and durum = 1");
             dgOkuyucular.DataSource = IDataBase.DataToDataTable("Select adi AS [Adı], soyadi AS [Soyadı], cinsiyeti AS [Cinsiyeti], sinifi AS [Sınıfı], okulNo AS [Okul Numarası], cepTel AS [Cep Telefonu], adres AS [Adres] From okuyucular Where aktif = 1");
         }
         private void FormHome_Load(object sender, EventArgs e)
