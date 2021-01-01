@@ -73,6 +73,10 @@ namespace WinFormKOS
         }
         void emanetEt()
         { 
+            if(kitapId == 0 || okuyucuId == 0)
+            {
+                MessageBox.Show("Kitap veya okuyucu seçmediniz");
+            }
              if(getEmanetId() > 0)
             {
                 MessageBox.Show("Seçili okuyucunun emaneti var");
